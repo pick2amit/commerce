@@ -1,0 +1,7 @@
+Results/
+.idea/
+.dockerignore
+.idea/workspace.xml
+!.keep
+!/Results/.keep*.pyc
+*.pyc
