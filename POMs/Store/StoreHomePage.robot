@@ -20,6 +20,10 @@ Seacrh product in store
 Select the first searched product
    Click Element   ${FirstProduct}
 
+Verify if the seach suggesions are displayed
+  Page Should Contain Element  ${FirstProduct}
+
+
 
 
 

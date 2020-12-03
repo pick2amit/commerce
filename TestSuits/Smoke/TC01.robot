@@ -12,7 +12,7 @@ Test Template  Invalid login
 
 *** Test Cases ***
 
-Invalid Login Script ${username}  ${password}  ${expectedresult1}  ${expectedresult2}  ${expectedresult3}  ${case1}  ${case2}  ${case3}
+Invalid Login Script  ${username}  ${password}  ${expectedresult1}  ${expectedresult2}  ${expectedresult3}  ${case1}  ${case2}  ${case3}
 
 
 *** Keywords ***

@@ -1,20 +1,18 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../Utilites/Browsers.robot
-<<<<<<< HEAD
+
 Library  SeleniumLibrary
 
 
 *** Variables ***
-${StoreURL} =  https://vishal-patil350.stores.mjc.instamojo.com/?ref=profile_bar
-=======
+${StoreURL} =  https://vishal-patil450.stores.mjc.instamojo.com/?ref=profile_bar
 
->>>>>>> origin/master
 *** Keywords ***
 
 Open ChromeHeadless
     [Arguments]    ${url}
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    ${chrome_options} =  Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    --disable-extensions
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
@@ -23,10 +21,7 @@ Open ChromeHeadless
     Go To    ${url}
 
 Open Instamojo
-<<<<<<< HEAD
-=======
     #Open ChromeHeadless  ${IMOJO}
->>>>>>> origin/master
     Open Browser  ${IMOJO}  ${chrome}
     Maximize Browser Window
     sleep  1s
