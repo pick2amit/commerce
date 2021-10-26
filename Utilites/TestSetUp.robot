@@ -22,7 +22,7 @@ Open ChromeHeadless
 
 Open Instamojo
     #Open ChromeHeadless  ${IMOJO}
-    Open Browser  ${IMOJO}  ${chrome}
+    Open Browser  ${IMOJO}  ${Safari}
     Maximize Browser Window
     sleep  1s
     Set Selenium Implicit Wait  20s
@@ -32,7 +32,7 @@ Close Instamojo
 
 
 Open online Store
-    Open Browser  ${StoreURL}  ${chrome}
+    Open Browser  ${StoreURL}  ${Safari}
     Maximize Browser Window
     sleep  1s
     Set Selenium Implicit Wait  20s
