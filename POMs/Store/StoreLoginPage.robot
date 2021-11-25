@@ -1,5 +1,5 @@
 *** Settings ***
-
+Library  SeleniumLibrary
 
 *** Variables ***
 ${LoginTextField}  xpath://input[@id='login_id_email']

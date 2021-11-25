@@ -1,4 +1,5 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 ${WhatTypeOfBusinessText}  xpath://h3[contains(@class,'soft--bottom text-grey flush')]

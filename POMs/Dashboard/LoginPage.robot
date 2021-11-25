@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=10s
 Resource  ../../Utilites/Browsers.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 
@@ -18,6 +18,9 @@ ${InstaMojoLogo}  xpath://a[contains(@class,'logo block small-only-push-half--bo
 ${ErrorMessage1}  xpath://li[contains(text(),'Please enter a username')]  #Please enter a username
 ${ErrorMessage2}  xpath://li[contains(text(),'Please enter your password')]  #lease enter your password
 ${ErrorMessage3}  xpath://p[@class='message fail']  #Are you share you entered right username and password
+
+${ProfileIcon}  xpath://div[@class='dropdown-control']//img
+${DashboardHeading}  //h1[normalize-space()='Dashboard']
 
 *** Keywords ***
 # These are the posible Methods that can be used for login
@@ -45,6 +48,13 @@ Click google login
 Click facebook login
     Click Button  ${LoginWithFaceBook}
 
+Login to instamojo
+    [Arguments]    ${email}    ${password}
+    Insert Login Username    ${email}
+    Insert Login Password    ${password}
+    Click Login Button
+    sleep    4s
+
 #Validations
 
 Verify the login page is displayed
@@ -52,4 +62,10 @@ Verify the login page is displayed
        Page Should Contain Textfield  ${LoginPWTextBox}
        Page Should Contain Button  ${LoginButton}
 
+Verify the error message for invalid login
+    [Arguments]    ${error_message}
+    page should contain    ${error_message}
 
+Verify the success login
+    Page Should Contain Element    ${DashboardHeading}
+    Page Should Contain Element    ${ProfileIcon}

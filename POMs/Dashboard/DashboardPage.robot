@@ -4,8 +4,9 @@ Library  SeleniumLibrary
 
 *** Variables ***
 #Genric
-${CreatePaymentLinkButton}  xpath://div[contains(text(),'Create Payment Link')]
-${DashboardButton}  xpath://div[@class='link__item__inner-content']//span[contains(text(),'Dashboard')]
+
+${CreateNewButton}  xpath://button[normalize-space()='Create New']
+${DashboardButton}  xpath://span[normalize-space()='Dashboard']
 
 #Store Signup
 ${AddProductButton}  xpath://div[contains(text(),'Add Product')]
@@ -18,12 +19,12 @@ ${CreateOnlineStoreButton}  xpath://div[contains(text(),'Create Online Store')]
 *** Keywords ***
 
 Click on the create link button
-  wait Until Element Is Visible  ${CreatePaymentLinkButton}
-  Click Element  ${CreatePaymentLinkButton}
+  wait Until Element Is Visible  ${CreateNewButton}}
+  Click Element  ${CreateNewButton}
+
 
 Verify the payment onboarding is successfull
-   Page Should Contain Element  ${CreateOnlineStoreButton}
-   Page Should Contain Element  ${CreatePaymentLinkButton}
+   Page Should Contain Element  ${CreateNewButton}
    Page Should Contain Element  ${DashboardButton}
 
 
@@ -35,12 +36,12 @@ Verify the store intent user succesfully logged in
 
 Verify the payment intent user succesfully logged in
    Page Should Contain Element  ${CreateOnlineStoreButton}
-   Page Should Contain Element  ${CreatePaymentLinkButton}
+   #Page Should Contain Element  ${CreatePaymentLinkButton}
    Page Should Contain Element  ${DashboardButton}
    Page Should Not Contain Element  ${AddProductButton}
 
 Verify both payment and store intent user succesfully logged in
-   Page Should Contain Element  ${AddProductButton}
-   Page Should Contain Element  ${CreatePaymentLinkButton}
-   Page Should Not Contain Element  ${CreateOnlineStoreButton}
+   #Page Should Contain Element  ${AddProductButton}
+   #Page Should Contain Element  ${CreatePaymentLinkButton}
+   #Page Should Not Contain Element  ${CreateOnlineStoreButton}
 

@@ -1,4 +1,5 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 ${PaymentLinkPlaceHolder}  xpath://h3[@class='soft--bottom text-grey flush']

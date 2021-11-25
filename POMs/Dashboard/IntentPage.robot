@@ -1,4 +1,5 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 ${GetStartedWithIMtext}  xpath://h3[@class='flush--top']

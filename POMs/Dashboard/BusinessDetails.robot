@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+
 *** Variables ***
 ${CategoryList}  xpath://li[@class='business-category']//select[@class='small-12']
 ${SubCategoryList}  xpath://li[@class='business-sub-category']//select[@class='small-12']
@@ -15,6 +16,7 @@ ${MoreBusinessDetails}  xpath://input[contains(@class,'btn-green btn-block')]
 *** Keywords ***
 
 Select the business category
+  sleep  2s
   Set Selenium Implicit Wait  10s
   Select From List By Value   ${CategoryList}  1
   sleep  5s

@@ -1,10 +1,12 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 # Choose your category. Locators
 ${ChooseCategoryHeading}  xpath://h2[contains(text(),'Choose your category')]
 ${ArtCraft&Collectables}  xpath://li[1]//div[1]//label[1]//input[1]
-${Baby}  xpath://li[3]//div[1]//label[1]//input[1]
+#${Baby}  xpath://li[3]//div[1]//label[1]//input[1]
+${Baby}  xpath://input[@value='6']
 ${Beauty&Fragrance}  xpath://li[4]//div[1]//label[1]//input[1]
 ${Books&Magazines}  xpath://li[5]//div[1]//label[1]//input[1]
 ${Next:CustomizeYourStore}  xpath://button[@class='wizard-btn pull-right']

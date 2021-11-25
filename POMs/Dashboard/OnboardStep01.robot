@@ -1,4 +1,5 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 ${StoreNameHeading}  xpath://h2[contains(text(),"What's the name of your store?")]

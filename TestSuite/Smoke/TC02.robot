@@ -4,7 +4,7 @@ Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/SignupPage.robot
 Resource  ../../POMs/Dashboard/OtpPage.robot
 Resource   ../../Utilites/TestSetUp.robot
-Resource  ../../POMs/Dashboard/SelectIntent.robot
+Resource  ../../POMs/Dashboard/IntentPage.robot
 Resource  ../../POMs/Dashboard/PaymentLink.robot
 Resource  ../../POMs/Dashboard/BusinessType.robot
 Resource  ../../POMs/Dashboard/BusinessDetails.robot
@@ -32,6 +32,7 @@ Signup and Payment Onboarding
   Click on signup button
 
   #Enter the mobile number and verify the OTP
+  sleep    4s
   Verify the otp page is displayed
   Enter the mobile number
   Click on send OTP button

@@ -1,4 +1,5 @@
 *** Settings ***
+Library  SeleniumLibrary
 
 *** Variables ***
 ${SellingDetailHeading}  xpath://h2[contains(text(),'What are you selling?')]
@@ -13,6 +14,18 @@ ${Next:ChooseYourCategory}  xpath://button[@class='wizard-btn pull-right']
 *** Keywords ***
 Select physical product
     Click Element  ${PhysicalProduct}
+
+Select digital product
+    Click Element    ${DigitalProduct}
+
+Select services
+    Click Element  ${Services}
+
+Select event tickets
+    Click Element   ${EventTickets}}
+
+Select others
+    Click Element    ${Others}
 
 CLick on Next Button of Step03
     Click Button  ${Next:ChooseYourCategory}

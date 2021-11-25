@@ -17,5 +17,5 @@ Test Teardown  Close Instamojo
 *** Test Cases ***
 
 Store guest check out
-  sleep 5s
+  sleep    5s
   Verify the store header is displayed

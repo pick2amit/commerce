@@ -8,7 +8,8 @@ ${Safari}  Safari
 ${InternetExpo}  IE
 
 
-${IMOJO}  https://staging.instamojo.com/dashboard
+${staging_url}    https://staging.instamojo.com/accounts/login/
+${production_url}    https://www.instamojo.com/accounts/login
 
 
 

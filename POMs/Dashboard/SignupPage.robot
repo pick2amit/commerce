@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=10s
 Resource  ../../Utilites/Browsers.robot
 Library  String
 
@@ -54,6 +54,7 @@ Click referralcode
 
 #Validations
 Verify the signup page is displayed
+       sleep    2s
        Page Should Contain Textfield  ${SignUpUNTextBox}
        Page Should Contain Textfield  ${SignUpPWTextBox}
        Page Should Contain Button  ${SignUpButton}
