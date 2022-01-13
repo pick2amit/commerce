@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
-MAINTAINER "Instamojo" <pick2amit@gmail.com>
+MAINTAINER "Instamojo" <amit.kt@instamojo.com>
 
-LABEL name="Docker build to execute the automation script script for https://staging.instamojo.com"
+LABEL name="Docker build to execute the automation script for https://staging.instamojo.com"
 
 RUN mkdir -p /usr/src/project
 WORKDIR /usr/src/project
@@ -42,6 +42,6 @@ CMD ["sh", "run.sh"]
 #Requirement to run this project
 # chromedriver version: 84.0.4147.30
 # chrome version: 84
-# pythone version: 3.6.8
+# python version: 3.6.8
 # Robotframework version: latest
 # Seleniumlibrary: latest
