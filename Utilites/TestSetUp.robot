@@ -21,8 +21,9 @@ Open ChromeHeadless
     Go To    ${url}
 
 Open Instamojo
+    [Arguments]    ${Browser}
     #Open ChromeHeadless  ${IMOJO}
-    Open Browser  ${staging_url}  ${Chrome}
+    Open Browser  ${staging_url}  ${Browser}
     Maximize Browser Window
     sleep  1s
     Set Selenium Implicit Wait  20s

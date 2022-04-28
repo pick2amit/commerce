@@ -1,13 +1,15 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=15s
 
 
 *** Variables ***
 #Genric
 
-${CreateNewButton}  xpath://button[normalize-space()='Create New']
+${createNewButton}  xpath://button[normalize-space()='Create New']
 ${DashboardButton}  xpath://span[normalize-space()='Dashboard']
-
+${dashboardHeading} xpath://h1[normalize-space()='Dashboard']
+${profileIcon}    xpath://div[@class='dropdown-control']//img
+${}
 #Store Signup
 ${AddProductButton}  xpath://div[contains(text(),'Add Product')]
 ${EnablePaymentMessage}  xpath://span[contains(text(),'Payment collection is not enabled on your account.')]
@@ -19,8 +21,8 @@ ${CreateOnlineStoreButton}  xpath://div[contains(text(),'Create Online Store')]
 *** Keywords ***
 
 Click on the create link button
-  wait Until Element Is Visible  ${CreateNewButton}}
-  Click Element  ${CreateNewButton}
+  wait Until Element Is Visible  ${createNewButton}}
+  Click Element  ${createNewButton}
 
 
 Verify the payment onboarding is successfull

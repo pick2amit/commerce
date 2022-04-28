@@ -3,7 +3,7 @@ Documentation  Valid login testcase
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource   ../../Utilites/TestSetUp.robot
 
-Test Setup  Open Instamojo
+Test Setup  Open Instamojo    ${Browser}
 Test Teardown  Close Instamojo
 
 *** Test Cases ***

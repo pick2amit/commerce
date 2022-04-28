@@ -14,7 +14,7 @@ Resource  ../../POMs/Dashboard/OnboardStep04.robot
 Resource  ../../POMs/Dashboard/OnboardStep05.robot
 Resource  ../../POMs/Dashboard/OnboardFinish.robot
 
-Test Setup  Open Instamojo
+Test Setup  Open Instamojo    ${Browser}
 Test Teardown  Close Instamojo
 
 *** Test Cases ***
