@@ -7,9 +7,7 @@ Resource  ../../POMs/Dashboard/Products/ProductListPage.robot
 Resource  ../../POMs/Dashboard/Products/AddProductPage.robot
 #Resource  ../../POMs/Dashboard/Products/AddProductPage.robot
 
-
-
-Test Setup  Open Instamojo    ${Browser}
+Test Setup  Open Instamojo    ${browser}
 Test Teardown  Close Instamojo
 
 *** Variables ***
@@ -17,11 +15,7 @@ ${productkacount}
 
 *** Test Cases ***
 verify product list page
-    LoginPage.Login To Instamojo    amit_kt55  test12
+    LoginPage.Login To Instamojo    amit_kt492  12345678
     LHSPage.Open Product List Page
-
-    ProductListPage.Get product count
-    ${productkacount} =    ProductListPage.Get product count
-    log to console  from testcase: ${productkacount}
-    #ProductListPage.My experment
+    ProductListPage.Verify product list
 

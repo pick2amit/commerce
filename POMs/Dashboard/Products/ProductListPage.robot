@@ -30,3 +30,12 @@ Verify add product success
     page should contain    Product Added Successfully
     ${expectedTitle}    get text    ${latestProductTitle}
     element text should be  ${latestProductTitle}    ${expectedTitle}
+
+Verify product list
+    TRY
+        page should contain element    ${NoProducts}
+    EXCEPT    # match any error
+        ${count}    Get product count
+        should be true    ${count} >= 1
+        page should contain element    ${Productcount}
+    END
