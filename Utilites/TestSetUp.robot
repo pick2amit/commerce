@@ -2,14 +2,9 @@
 Library  SeleniumLibrary
 Resource  ../Utilites/Browsers.robot
 
-Library  SeleniumLibrary
 
-
-*** Variables ***
-${StoreURL} =  https://vishal-patil450.stores.mjc.instamojo.com/?ref=profile_bar
 
 *** Keywords ***
-
 Open ChromeHeadless
     [Arguments]    ${url}
     ${chrome_options} =  Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
@@ -21,20 +16,18 @@ Open ChromeHeadless
     Go To    ${url}
 
 Open Instamojo
-    [Arguments]    ${Browser}
-    #Open ChromeHeadless  ${IMOJO}
-    Open Browser  ${staging_url}  ${Browser}
+    [Arguments]    ${browser}
+    Open Browser  ${url}  ${browser}
     Maximize Browser Window
-    sleep  1s
     Set Selenium Implicit Wait  20s
 
 Close Instamojo
-    sleep    3s
-    Close Browser
+    sleep    2s
+    close all browsers
 
 
 Open online Store
-    Open Browser  ${StoreURL}  ${Safari}
+    Open Browser  ${store_url}  ${browser}
     Maximize Browser Window
     sleep  1s
     Set Selenium Implicit Wait  20s
