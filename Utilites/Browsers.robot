@@ -2,15 +2,12 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${Browser}    Chrome
-#${chrome}  Chrome
-#${firefox}  ff
-#${Safari}  Safari
-#${InternetExpo}  IE
+${browser}    Chrome
+${store_url}    https://amit-kt509.myinstamojo.com/
 
 
-${staging_url}    https://staging0.instamojo.com/accounts/login/
-${production_url}    https://www.instamojo.com/accounts/login
+#${url}    https://staging0.instamojo.com/accounts/login/
+${url}    https://www.instamojo.com/accounts/login
 
 
 

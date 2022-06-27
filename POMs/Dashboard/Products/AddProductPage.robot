@@ -1,5 +1,6 @@
 *** Settings ***
-Library  SeleniumLibrary  timeout=15s
+Library  SeleniumLibrary   timeout=20s
+
 *** Variables ***
 ${CurrentURL}
 #Product type locators
@@ -7,7 +8,6 @@ ${PhysicalProduct}  xpath://h3[normalize-space()='Physical Product']
 ${DigitalProduct}  xpath://h3[normalize-space()='Digital File']
 ${EventTicket}  xpath://h3[normalize-space()='Event Tickets']
 ${Others}  xpath:////h3[normalize-space()='Others']
-
 #Physical product form loctors
 ${BackBtn}  xpath://img[@src='/images/add-product/icons/icon-back.svg']
 ${SaveBtn}  xpath://button[normalize-space()='Save']
@@ -18,7 +18,6 @@ ${uploadProgressBar}    xpath://p[normalize-space()='uploading...']
 ${RemoveImage}  xpath://span[@class='close']
 ${path}  /Users/instamojo/Desktop/product-images/romance_at_dusk.png
 ${path2}  ./../../../DataDriven/dusk
-
 ${Title}  xpath://input[@name='title']
 ${Description}  xpath://div[@class='ql-editor ql-blank']
 ${FixedPriceBtn}  xpath://input[@value='default']
@@ -37,10 +36,6 @@ ${Weight}  xpath://input[@name='weight']
 ${VariantsToggleBtn}  xpath://label[@for='variantsSettingCheckbox']
 ${AddCategory}  xpath://button[normalize-space()='Add New Category']
 ${SearchCategory}  xpath://input[@placeholder='search']
-#${}  xpath:
-#${}  xpath:
-#${}  xpath:
-#${}  xpath:
 ${ResellingToggleBtn}  xpath://label[@for='available_in_reseller_networkSettingCheckbox']
 ${SEOToggleBtn}  xpath://label[@for='product_seoSettingCheckbox']
 ${MetaTitle}  xpath://input[@name='meta_title']
@@ -49,9 +44,7 @@ ${CanonicalURL}  xpath://input[@name='meta_canonical_url']
 ${ThanksNote}  xpath://textarea[@name='note']
 ${RedirectURL}  xpath://input[@name='redirect_url']
 ${WebhookURL}  xpath://input[@name='webhook_url']
-
 ${ToastMsg}    xpath://div[@class='react-toast-notifications__container css-xg5s2c']
-
 
 *** Keywords ***
 Select physical product
@@ -110,7 +103,3 @@ Save product
 Get current url
     ${CurrentURL}  Get Location
     Page Should Contain    ${CurrentURL}
-
-Verify the error
-    #page should contain element    ${ToastMsg}
-    #page should contain    Please fiashb jwbdkwajbckj
