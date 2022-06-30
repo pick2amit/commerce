@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=10s
+Library  SeleniumLibrary    timeout=15s
 Resource  ../../Utilites/Browsers.robot
 Library  String
 
@@ -22,14 +22,14 @@ ${SignUpAsConsumer}  xpath://input[@id='submit-consumer-signup']
 
 ${SignUpPW}  12345678
 ${Random}
-${Domain}  @gmail.com
+${Domain}  @test.com
 
 
 *** Keywords ***
 
 Insert signup username
       ${Random} =  Generate Random String  10  [LOWER]
-      ${SignUpUN} =    Set Variable  ${Random}${Domain}
+      ${SignUpUN} =    Set Variable  automation-${Random}${Domain}
       log to console  ${SignUpUN}
       sleep  2s
       Input Text  ${SignUpUNTextBox}  ${SignUpUN}
