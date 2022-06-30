@@ -4,7 +4,7 @@ Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/HomePage.robot
 
-Test Setup  Open Instamojo    ${Browser}
+Test Setup  Open Instamojo    ${browser}
 Test Teardown  Close Instamojo
 
 *** Test Cases ***

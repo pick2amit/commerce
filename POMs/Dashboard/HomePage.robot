@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=15s
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${imbLogo}  xpath://picture[@title='instamojo_logo']//img
