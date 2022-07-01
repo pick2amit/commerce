@@ -1,6 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=10s
-Resource  ../../Utilites/Browsers.robot
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${MobileNumber}   xpath://div[@class='columns small-10']//input
@@ -15,7 +14,7 @@ ${test}  xpath://h3[@class='flush--top']
 *** Keywords ***
 Enter the mobile number
     sleep    3s
-    Input Text  ${MobileNumber}  1234567890
+    Input Text  ${MobileNumber}  9891321373
 
 Click on send OTP button
     Click Button  ${SendOTP}
@@ -41,7 +40,3 @@ Verify the otp page is displayed
    sleep  2s
    Page Should Contain Element  ${MobileNumber}
    Page Should Contain Element  ${SendOTP}
-
-
-
-

@@ -4,13 +4,13 @@ Library  DataDriver    ../../DataDriven/LoginData.xlsx
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource   ../../Utilites/TestSetUp.robot
 
-Test Setup  Open Instamojo
+Test Setup  Open Instamojo    ${Browser}
 Test Teardown  Close Instamojo
 Test Template    Invalid login
 
 *** Test Cases ***
     Verify the invalidLogin testcases    {username}    {password}    {error_message}
-    [Tags]    Smoke
+    [Tags]    None
 
 *** Keywords ***
 Invalid login

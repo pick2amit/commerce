@@ -1,6 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
-
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${YourPanTextBox}  xpath://ul[contains(@class,'form-items-container')]/li[1]/div[2]/input
@@ -13,7 +12,6 @@ ${Services}  xpath://input[contains(@name,'Services')]
 ${Product}  xpath://label[contains(@class,'soft-quarter--ends text-black inline-block small-12 medium-3 push--right')]//input[contains(@name,'Products')]
 ${Others}  xpath://label[3]//input[1]
 ${Next:Bank Details}  xpath://input[contains(@class,'btn-green btn-block')]
-
 
 *** Keywords ***
 Enter the pan details
@@ -45,5 +43,3 @@ Verify the more business details page is displayed
    Page Should Contain Element  ${PanName}
    Page Should Contain Element  ${PanAdress}
    Page Should Contain Element  ${StateDD}
-
-

@@ -57,5 +57,3 @@ Enter the delivery details
 Click on continue to Bag
    Click Element  ${ContinueToBag}
    sleep  3s
-
-
