@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 # element list in LHS menu
@@ -73,6 +73,3 @@ Open product list page
     scroll element into view    ${Products}
     click element    ${Products}
     click element    ${AllProducts}
-
-
-

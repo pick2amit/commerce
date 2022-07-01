@@ -1,6 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
-
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${PaymentLinkTextBox}  xpath://span[@id='shorturl']
@@ -19,10 +18,7 @@ ${EnterPassword}  xpath://input[@id='txtPassword']
 ${SubmitButton}  xpath://input[@id='cmdSubmit']
 ${PaymentSuccessfull}  xpath://h3[@class='text-green font-rc']
 
-
-
 *** Keywords ***
-
 Click reload if the page not opened
   Reload Page
   Handle Alert  action=ACCEPT
@@ -41,7 +37,6 @@ Copy the link and enter the user details
   Input Text  ${MobileNoTextBox}  ${PayerMobileNo}
   Click Element  ${Next}
   sleep  5s
-
 
 Select credit card option and make payment
   Click Element  ${CreditCard}
@@ -70,15 +65,5 @@ Select credit card option and make payment
   Switch Window  @{WindowHandles}[0]
   sleep  2s
 
-
 Verify the payment is done succesfullly
   Page Should Contain Element  ${PaymentSuccessfull}
-
-
-
-
-
-
-
-
-

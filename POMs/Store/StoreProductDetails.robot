@@ -9,10 +9,7 @@ ${ProductPrice}  xpath://div[@class='product-price alternate-bg ng-scope']
 ${ProductImage}  xpath://img[@class='img-responsive center-block product-image']
 ${ProductQuantity}  xpath://div[@class='alternate-bg product-quantity ng-scope']
 
-
 *** Keywords ***
-
-
 Click on buy now button
    Click Element  ${BuyNow}
 

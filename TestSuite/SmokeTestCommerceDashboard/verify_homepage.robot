@@ -9,6 +9,6 @@ Test Teardown  Close Instamojo
 
 *** Test Cases ***
 Verify the landing/home page
+    [Tags]    Smoke
     LoginPage.Open the homepage
-
     HomePage.Verify the homepage

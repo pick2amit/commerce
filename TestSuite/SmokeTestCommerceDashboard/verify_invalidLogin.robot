@@ -10,7 +10,7 @@ Test Template    Invalid login
 
 *** Test Cases ***
     Verify the invalidLogin testcases    {username}    {password}    {error_message}
-    [Tags]    Smoke
+    [Tags]    None
 
 *** Keywords ***
 Invalid login
