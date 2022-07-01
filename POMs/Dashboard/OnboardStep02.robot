@@ -11,8 +11,6 @@ ${WebsiteLink}  xpath://input[@placeholder='Example: www.yourwebsite.com']
 ${Next:WhatAreYouSelling}  xpath://button[@class='wizard-btn pull-right']
 ${BackBtn}  xpath://button[@class='back-btn']
 
-
-
 *** Keywords ***
 Enter insta username
     Input Text  ${InstagramUN}  akt-insta

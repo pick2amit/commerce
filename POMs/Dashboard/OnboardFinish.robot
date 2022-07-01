@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=15s
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 # Store setup finish page Locators
@@ -11,7 +11,6 @@ Library  SeleniumLibrary    timeout=15s
 ${OnboardSuccessLogo}    xpath://img[@alt='Onboard success!']
 ${Congrats}    xpath://h2[normalize-space()='Congratulations!']
 ${SetupYourOnlineStore}  xpath://a[normalize-space()='Setup Your Online Store']
-
 
 *** Keywords ***
 Verify the onboard finish page is displayed

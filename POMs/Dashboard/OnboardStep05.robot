@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 # Select theme Locators
@@ -9,7 +9,6 @@ ${StoreUrlInputBox}  xpath://input[@placeholder='E.g. Shah Shoes & Clothes']
 ${Suggestion1}  xpath://li[1]//div[1]//label[1]
 ${Suggestion2}  xpath://li[2]//div[1]//label[1]
 ${CreateStore}  xpath://button[@class='wizard-btn pull-right']
-
 
 *** Keywords ***
 Select 1st url suggestion

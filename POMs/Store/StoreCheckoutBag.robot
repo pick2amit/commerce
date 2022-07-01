@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${MakePaymentButton}  xpath://button[@class='theme-btn theme-btn-solid proceed-payment-btn btn-block hidden-xs ng-scope']

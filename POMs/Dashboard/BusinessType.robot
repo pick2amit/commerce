@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${WhatTypeOfBusinessText}  xpath://h3[contains(@class,'soft--bottom text-grey flush')]
@@ -9,9 +9,7 @@ ${PropYes}  xpath://div[contains(@class,'can-has-errors')]//div//label[1]//input
 ${PropNo}  xpath://input[contains(@name,'not-propreitor')]
 ${Next:Business Details}  xpath://input[contains(@value,'Next: Business Details')]
 
-
 *** Keywords ***
-
 Select the individual type
   Click Element  ${IndividualCheckBox}
   sleep  2s
@@ -25,7 +23,6 @@ Select proprietor yes
 
 Select proprietor no
   Click Element  ${PropNo}
-
 
 Click on the next:business details button
   Click Element  ${Next:Business Details}

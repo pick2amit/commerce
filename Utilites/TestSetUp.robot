@@ -1,8 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ../Utilites/Browsers.robot
-
-
+Variables    ${env}.py
+Variables    testData.py
 
 *** Keywords ***
 Open ChromeHeadless
@@ -25,10 +24,8 @@ Close Instamojo
     sleep    2s
     close all browsers
 
-
 Open online Store
     Open Browser  ${store_url}  ${browser}
     Maximize Browser Window
     sleep  1s
     Set Selenium Implicit Wait  20s
-

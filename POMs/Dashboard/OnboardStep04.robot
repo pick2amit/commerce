@@ -11,7 +11,6 @@ ${Beauty&Fragrance}  xpath://li[4]//div[1]//label[1]//input[1]
 ${Books&Magazines}  xpath://li[5]//div[1]//label[1]//input[1]
 ${Next:CustomizeYourStore}  xpath://button[@class='wizard-btn pull-right']
 
-
 *** Keywords ***
 Select category
     Click Element  ${Baby}

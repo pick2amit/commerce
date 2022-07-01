@@ -1,10 +1,8 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=10s
-Resource  ../../Utilites/Browsers.robot
+Library  SeleniumLibrary    timeout=20s
 Resource  ../../POMs/Dashboard/LoginPage.robot
 
 *** Variables ***
-
 # These are the WebElements
 #${instamojoLogo}    xpath://a[contains(@class,'logo block small-only-push-half--bottom')]
 
@@ -59,7 +57,6 @@ Login to instamojo
     sleep    4s
 
 #Validations
-
 Verify the login page is displayed
        Page Should Contain Textfield  ${LoginUNTextBox}
        Page Should Contain Textfield  ${LoginPWTextBox}

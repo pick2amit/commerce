@@ -1,13 +1,11 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${LoginTextField}  xpath://input[@id='login_id_email']
 ${PasswordTextFeild}  xpath://input[@id='login_id_password']
 ${LoginButtonS}  xpath://button[contains(text(),'Log in')]
 ${SuccessLogin}  xpath://a[contains(text(),'Hi Visha')]
-
-
 
 *** Keywords ***
 Enter username
@@ -23,6 +21,3 @@ Click on the submit button
 Verify valid login
   Set Selenium Implicit Wait  10s
   page should contain element  ${SuccessLogin}
-
-
-

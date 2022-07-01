@@ -52,7 +52,6 @@ Select physical product
     sleep    4s
 Select product image
     sleep    2s
-    #Choose File    ${AddImage}  ..${/}..${/}..${/}DataDriven${/}dusky.png ${CURDIR}
     Choose File    ${AddImage}  ${EXECDIR}/DataDriven/dusk.png
     wait until element is not visible    ${uploadProgressBar}    timeout=15s
     #wait until element is visible    ${removeimage}    timeout=15s
@@ -60,9 +59,9 @@ Remove image
     Click Element    ${removeimage}
     sleep    2s
 Enter product title
-    Input Text    ${Title}  This is a beautiful DUSK
+    Input Text    ${Title}  ${product_title}
 Enter product description
-    Input Text    ${description}  This is the Product DUSK description. I am adding few more details.
+    Input Text    ${description}  ${product_description}
 Select fixed price
     Click Element    ${fixedpricebtn}
 Select PWYW price
@@ -70,34 +69,36 @@ Select PWYW price
 Select free price
     Click Element    ${freebtn}
 Enter selling price
-    Input Text    ${SellingPrice}  250
+    Input Text    ${SellingPrice}  ${product_price}
 Enter discounted price
     Click Element    ${discountedpricecheckbox}
-    Input Text    ${discountedprice}  200
+    Input Text    ${discountedprice}  ${product_discountedPrice}
 Enter stock
-    Input Text    ${stock}  99
+    Input Text    ${stock}  ${product_stock}
 Enter min order quantity
-    Input Text    ${minorderlimit}  1
+    #scroll element into view    ${minorderlimit}
+    #sleep    2s
+    Input Text    ${minorderlimit}    ${minimum_orderLimit}
 Enter max order quantity
-    Input Text    ${maxorderlimit}  10
+    Input Text    ${maxorderlimit}  ${maximum_orderLimit}
 Enter SKU
-    Input Text    ${sku}  sku@0122
+    Input Text    ${sku}  ${product_sku}
 Enter shipwithin days
-    Input Text    ${shipwithin}  2
+    Input Text    ${shipwithin}  ${ship_days}
 Enter product weight
-    Input Text    ${weight}  200
+    Input Text    ${weight}  ${product_weight}
 Enter meta title
-    Input Text    ${metatitle}  this is meta title
+    Input Text    ${metatitle}  ${product_meta_title}
 Enter meta description
-    Input Text    ${metadescription}  this is meta description
+    Input Text    ${metadescription}  ${product_meta_description}
 Enter canonical url
-    Input Text    ${canonicalurl}  http://canonical.abc.com
+    Input Text    ${canonicalurl}  ${product_canonical_url}
 Enter thankyou note
-    Input Text    ${thanksnote}  Thanks for purchasing this product
+    Input Text    ${thanksnote}  ${product_thanks_note}
 Enter redirect url
-    Input Text    ${redirecturl}  http://redirect.abc.com
+    Input Text    ${redirecturl}  ${product_redirect_url}
 Enter webhook url
-    Input Text    ${webhookurl}  http://webhook.abc.com
+    Input Text    ${webhookurl}  ${product_webhook_url}
 Save product
     Click Element    ${savebtn}
 Get current url

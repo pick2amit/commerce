@@ -1,11 +1,10 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${StoreNameHeading}  xpath://h2[contains(text(),"What's the name of your store?")]
 ${StoreNameInputBox}  xpath://input[@placeholder='Example : My Store Name']
 ${Next:AddSocialLink}  xpath://button[@class='wizard-btn']
-
 
 *** Keywords ***
 Enter Store Name

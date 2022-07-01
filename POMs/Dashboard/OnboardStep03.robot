@@ -10,7 +10,6 @@ ${EventTickets}  xpath://p[contains(text(),'Event Tickets')]
 ${Others}  xpath://p[contains(text(),'Others')]
 ${Next:ChooseYourCategory}  xpath://button[@class='wizard-btn pull-right']
 
-
 *** Keywords ***
 Select physical product
     Click Element  ${PhysicalProduct}
