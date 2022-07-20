@@ -15,7 +15,9 @@ Resource  ../../POMs/Dashboard/OnboardStep05.robot
 Resource  ../../POMs/Dashboard/planpopupaftersignup.robot
 
 
-Test Setup  Open Instamojo
+
+Test Setup    Open Instamojo    ${browser}
+Test Teardown  Close Instamojo
 
 
 *** Test Cases ***
