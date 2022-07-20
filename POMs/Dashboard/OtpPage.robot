@@ -8,7 +8,7 @@ ${OTPField1}  xpath://div[contains(@class,'can-has-errors')]//div//div[1]//input
 ${OTPField2}  xpath://div[contains(@class,'columns medium-12 small-centered')]//div[2]//input[1]
 ${OTPField3}  xpath://div[contains(@class,'row')]//div[3]//input[1]
 ${OTPField4}  xpath://div[4]//input[1]
-${VerifyOTP}  xpath://input[contains(@class,'btn btn-green btn-block push--bottom')]
+${VerifyOTP}  xpath=//form[@id='otpInputFields']/div/div/ul/input
 ${test}  xpath://h3[@class='flush--top']
 
 *** Keywords ***
