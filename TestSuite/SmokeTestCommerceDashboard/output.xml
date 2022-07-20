@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on darwin)" generated="20220720 11:13:04.419" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Planaftersignup" source="/Users/abinaya/Documents/QA/QA/TestSuite/SmokeTestCommerceDashboard/verify_planaftersignup.robot">
+<test id="s1-t1" name="Store onboarding signup">
+<kw name="Open Instamojo" library="TestSetUp" type="SETUP">
+<msg timestamp="20220720 11:13:04.832" level="FAIL">Keyword 'TestSetUp.Open Instamojo' expected 1 argument, got 0.</msg>
+<status status="FAIL" starttime="20220720 11:13:04.832" endtime="20220720 11:13:04.832"/>
+</kw>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20220720 11:13:04.831" endtime="20220720 11:13:04.832">Setup failed:
+Keyword 'TestSetUp.Open Instamojo' expected 1 argument, got 0.</status>
+</test>
+<doc>Verify subscriptionplan after sign up</doc>
+<status status="FAIL" starttime="20220720 11:13:04.422" endtime="20220720 11:13:04.833"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Verify Planaftersignup">Verify Planaftersignup</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220720 11:13:04.649" level="ERROR">Error in file '/Users/abinaya/Documents/QA/QA/Utilites/TestSetUp.robot' on line 3: Replacing variables from setting 'Variables' failed: Variable '${env}' not found.</msg>
+</errors>
+</robot>

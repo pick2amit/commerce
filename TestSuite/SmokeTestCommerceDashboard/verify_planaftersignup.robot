@@ -1,4 +1,4 @@
-                                        *** Settings ***
+*** Settings ***
 Documentation  Verify subscriptionplan after sign up
 Library  SeleniumLibrary
 Resource   ../../Utilites/TestSetUp.robot
@@ -70,7 +70,6 @@ Store onboarding signup
         OnboardStep05.Select 1st Url Suggestion
         OnboardStep05.CLick On The Create Store
 
-
 #Verify Planpop in home page
         planpopupaftersignup.access dashboard from sidebar
-        planpopupaftersignup.verify plan
+        planpopupaftersignup.Verify Plan
