@@ -73,3 +73,4 @@ Open product list page
     scroll element into view    ${Products}
     click element    ${Products}
     click element    ${AllProducts}
+
