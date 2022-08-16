@@ -1,3 +1,4 @@
+# Product data
 product_title = "This is a beautiful DUSK"
 product_description = "This is the Product DUSK description. I am adding few more details."
 product_price = "250"
@@ -14,3 +15,4 @@ product_canonical_url = "http://canonical.abc.com"
 product_thanks_note = "Thanks for purchasing this product"
 product_redirect_url = "http://redirect.abc.com"
 product_webhook_url = "http://webhook.abc.com"
+categories_name = "Dynamic category"
