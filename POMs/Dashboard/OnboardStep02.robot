@@ -4,22 +4,22 @@ Library  SeleniumLibrary
 *** Variables ***
 # What are your business social profiles? Locators
 ${BusinesDetailHeading}  xpath://h2[contains(text(),'What are your business social profiles?')]
-${InstagramUN}  xpath://fieldset[@class='input-bg insta']//input[@placeholder='Example : yourstore']
-${FBPage}  xpath://fieldset[@class='input-bg fb']//input[@placeholder='Example : yourstore']
+${InstagramUN}  xpath=//section[@id='gmas-main-wrapper']/div[2]/div/div[2]/fieldset/div/input
+${FBPage}  xpath=//section[@id='gmas-main-wrapper']/div[2]/div/div[2]/fieldset[2]/div/input
 ${YoutubeChannel}  xpath://fieldset[@class='input-bg yt']//input[@placeholder='Example : yourstore']
 ${WebsiteLink}  xpath://input[@placeholder='Example: www.yourwebsite.com']
-${Next:WhatAreYouSelling}  xpath://button[@class='wizard-btn pull-right']
+${Next:WhatAreYouSelling}  xpath=//section[@id='gmas-main-wrapper']/div[2]/div/div[2]/div/button
 ${BackBtn}  xpath://button[@class='back-btn']
 
 *** Keywords ***
 Enter insta username
-    Input Text  ${InstagramUN}  akt-insta
+    Input Text  ${InstagramUN}  akt
 
 Enter FB page
-    Input Text  ${FBPage}  akt.fb.com
+    Input Text  ${FBPage}  aktfb
 
 Enter Youtube channel
-    Input Text  ${YoutubeChannel}  akt.youtube.com
+    Input Text  ${YoutubeChannel}  https://www.youtube.com/c/akt
 
 Enter Website
     Input Text  ${WebsiteLink}  www.akt.syncupcom

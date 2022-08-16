@@ -15,6 +15,4 @@ product_canonical_url = "http://canonical.abc.com"
 product_thanks_note = "Thanks for purchasing this product"
 product_redirect_url = "http://redirect.abc.com"
 product_webhook_url = "http://webhook.abc.com"
-
-# Category data
 categories_name = "Dynamic category"

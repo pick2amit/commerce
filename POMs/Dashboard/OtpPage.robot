@@ -3,12 +3,12 @@ Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${MobileNumber}   xpath://div[@class='columns small-10']//input
-${SendOTP}  xpath://input[@class='btn-green btn-block']
+${SendOTP}  xpath=//div[@id='dashboard']/div/div/div[3]/section/div/div/div[2]/div/div/div/ul/div/div/div/div/form/div/div/ul/li[2]/div/div/input
 ${OTPField1}  xpath://div[contains(@class,'can-has-errors')]//div//div[1]//input[1]
 ${OTPField2}  xpath://div[contains(@class,'columns medium-12 small-centered')]//div[2]//input[1]
 ${OTPField3}  xpath://div[contains(@class,'row')]//div[3]//input[1]
 ${OTPField4}  xpath://div[4]//input[1]
-${VerifyOTP}  xpath://input[contains(@class,'btn btn-green btn-block push--bottom')]
+${VerifyOTP}  xpath=//form[@id='otpInputFields']/div/div/ul/input
 ${test}  xpath://h3[@class='flush--top']
 
 *** Keywords ***
