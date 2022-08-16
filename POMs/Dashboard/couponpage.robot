@@ -28,7 +28,6 @@ ${Checkthistomakethecouponvalidonlyonceperbuyer}     xpath=//div[@id='__next']/d
 ${savecoupon}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[18]/button
 
 
-
 *** Keywords ***
 Verify navigating tto discounts
      maximize browser window
@@ -50,6 +49,7 @@ Enter the name of the coupon
 select validunttil date
 
       click element    ${dateinput}
+      scroll element into view    ${applydate}
       click element    ${nextmonth}
       sleep    5s
       click element    ${selectdate}
