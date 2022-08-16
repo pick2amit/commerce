@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220808 16:09:31.742" rpa="false" schemaversion="3">
+<suite id="s1" name="Verify Addcoupon" source="/Users/abinaya/Documents/QA/QA/TestSuite/SmokeTestCommerceDashboard/verify_addcoupon.robot">
+<test id="s1-t1" name="Verify Adding Coupon" line="11">
+<kw name="Open Instamojo" library="TestSetUp" type="SETUP">
+<arg>${browser}</arg>
+<msg timestamp="20220808 16:09:32.603" level="FAIL">Variable '${browser}' not found.</msg>
+<status status="FAIL" starttime="20220808 16:09:32.600" endtime="20220808 16:09:32.603"/>
+</kw>
+<status status="FAIL" starttime="20220808 16:09:32.599" endtime="20220808 16:09:32.603">Setup failed:
+Variable '${browser}' not found.</status>
+</test>
+<doc>Add coupon</doc>
+<status status="FAIL" starttime="20220808 16:09:31.745" endtime="20220808 16:09:32.604"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Verify Addcoupon">Verify Addcoupon</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220808 16:09:32.330" level="ERROR">Error in file '/Users/abinaya/Documents/QA/QA/Utilites/TestSetUp.robot' on line 3: Replacing variables from setting 'Variables' failed: Variable '${env}' not found.</msg>
+</errors>
+</robot>

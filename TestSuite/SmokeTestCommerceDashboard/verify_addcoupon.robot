@@ -9,7 +9,7 @@ Test Setup  Open Instamojo    ${browser}
 
 *** Test Cases ***
 Verify Adding Coupon
-
+    [Tags]    Smoke
 #LoginPage.Verify The Login Page Is Displayed
     LoginPage.Login To Instamojo  ${username}  ${password}
     LoginPage.Verify The Success Login
