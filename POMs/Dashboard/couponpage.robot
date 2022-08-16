@@ -50,7 +50,6 @@ Enter the name of the coupon
 select validunttil date
 
       click element    ${dateinput}
-      scroll element into view    ${applydate}
       click element    ${nextmonth}
       sleep    5s
       click element    ${selectdate}
