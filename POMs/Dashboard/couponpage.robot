@@ -13,9 +13,9 @@ ${editcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[
 ${couponnameinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div/div/ul/li/div[2]/div/input
 ${promocodde}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[6]/div/ul/li/div[2]/div/input
 ${dateinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[4]/div/input
-${nextmonth}    xpath=//div[2]/div/table/thead/tr/th[3]
-${selectdate}    xpath=//body/div[5]/div[2]/div[1]/table/tbody/tr[4]/td[6]
-${applydate}     xpath=//body/div[5]/div[4]/button[2]
+${nextmonth}    xpath=//div[6]/div[2]/div[1]/table/thead/tr[1]/th[3]
+${selectdate}    xpath=//body/div[6]/div[2]/div[1]/table/tbody/tr[4]/td[6]
+${applydate}     xpath=//body/div[6]/div[4]/button[2]
 ${eligiblleamount}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[5]/div/ul/li/div[2]/div/input
 ${promotype}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[7]/div/ul/li/div[2]/select
 ${promotypeinput}    xpath://select
@@ -26,7 +26,6 @@ ${Showoncheckout}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/fo
 ${Selectifthecouponisactive}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[16]/div[2]/div/div/div/label/label
 ${Checkthistomakethecouponvalidonlyonceperbuyer}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[17]/div[2]/div/div/div/label/label
 ${savecoupon}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[18]/button
-
 
 
 *** Keywords ***
@@ -50,7 +49,6 @@ Enter the name of the coupon
 select validunttil date
 
       click element    ${dateinput}
-      scroll element into view    ${applydate}
       click element    ${nextmonth}
       sleep    5s
       click element    ${selectdate}
