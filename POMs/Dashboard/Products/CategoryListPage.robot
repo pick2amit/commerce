@@ -40,6 +40,7 @@ Select the featured toggle
     click element    ${featuredtogglebtn}
 
 Save category
+    wait until element is enabled  ${savebtn}
     click element    ${savebtn}
 
 Select 1st category from the list
@@ -57,6 +58,7 @@ Confirm category delete
 #    UploadImage.select 1st image to upload
 
 Verify add category success
+    wait until element is visible   ${ToastMsg}    timeout=10s
     page should contain    Created category successfully
     page should contain element    ${ToastMsg}
 
