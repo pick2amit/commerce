@@ -4,15 +4,12 @@ Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
 
-Test Setup  Open Instamojo    ${browser}
-
+Test Setup    back to homepage
+Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Verify Adding Coupon
     [Tags]    Smoke
-#LoginPage.Verify The Login Page Is Displayed
-    LoginPage.Login To Instamojo  ${username}  ${password}
-    LoginPage.Verify The Success Login
 #Navigate to coupon page
      couponpage.Verify navigating tto discounts
      couponpage.Veriy navigating to coupon page

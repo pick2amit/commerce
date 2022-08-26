@@ -3,6 +3,7 @@ Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
 # element list in LHS menu
+${HomeBtn}    xpath://a[normalize-space()='Instamojo']
 ${CreateNewBtn}  xpath://button[normalize-space()='Create New']
 ${Dashboard}  xpath://span[normalize-space()='Dashboard']
 ${PaymentHeading}  xpath://div[normalize-space()='Payments']

@@ -49,6 +49,7 @@ Enter the name of the coupon
 select validunttil date
 
       click element    ${dateinput}
+      wait until element is visible   ${nextmonth}  timeout=10s
       click element    ${nextmonth}
       sleep    5s
       click element    ${selectdate}

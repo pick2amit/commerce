@@ -2,7 +2,7 @@
 Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
-${AllProductHeading}  xpath://h1[normalize-space()='All Products']
+${AllProductHeading}  xpath://h2[normalize-space()='All Products']
 ${BulkEditLink}  xpath://span[normalize-space()='Bulk Edit']
 ${BulkImportLink}  xpath://span[normalize-space()='Bulk Import']
 ${AddProductBtn}  xpath://a[normalize-space()='Add Product']
@@ -33,6 +33,7 @@ Verify add product success
     element text should be  ${latestProductTitle}    ${expectedTitle}
 
 Verify product list
+    wait until element is visible  ${AllProductHeading}  timeout=25s
     TRY
         page should contain element    ${NoProducts}
     EXCEPT    # match any error

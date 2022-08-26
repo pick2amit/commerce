@@ -9,6 +9,8 @@ ${signupBtn}  xpath:(//a[contains(@href,'#')][normalize-space()='Sign Up'])[1]
 ${pricingPageLink}  xpath://ul[@id='menu-uber-pri-menu']//a[normalize-space()='Pricing']
 
 *** Keywords ***
+Open login page
+    click element    ${loginBtn}
 Verify the homepage
     wait until page contains element    ${mojoStarLogo}
     page should contain element    ${imbLogo}
