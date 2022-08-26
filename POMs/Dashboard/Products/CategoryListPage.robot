@@ -41,6 +41,7 @@ Select the featured toggle
 
 Save category
     wait until element is enabled  ${savebtn}
+    sleep    2s
     click element    ${savebtn}
 
 Select 1st category from the list
