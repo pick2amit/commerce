@@ -4,7 +4,7 @@ Library  DataDriver    ../../DataDriven/LoginData.xlsx
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource   ../../Utilites/TestSetUp.robot
 
-Test Setup  Open Instamojo    ${Browser}
+Test Setup  Open Instamojo    headlesschrome
 Test Teardown  Close Instamojo
 Test Template    Invalid login
 

@@ -3,18 +3,19 @@ Documentation  Store onboarding testcase
 Library  SeleniumLibrary
 Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
-Resource  ../../POMs/Dashboard/SignupPage.robot
-Resource  ../../POMs/Dashboard/OtpPage.robot
-Resource  ../../POMs/Dashboard/IntentPage.robot
+Resource  ../../POMs/Dashboard/Onboarding/SignupPage.robot
+Resource  ../../POMs/Dashboard/Onboarding/OtpPage.robot
+Resource  ../../POMs/Dashboard/Onboarding/IntentPage.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
-Resource  ../../POMs/Dashboard/OnboardStep01.robot
-Resource  ../../POMs/Dashboard/OnboardStep02.robot
-Resource  ../../POMs/Dashboard/OnboardStep03.robot
-Resource  ../../POMs/Dashboard/OnboardStep04.robot
-Resource  ../../POMs/Dashboard/OnboardStep05.robot
-Resource  ../../POMs/Dashboard/OnboardFinish.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardStep01.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardStep02.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardStep03.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardStep04.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardStep05.robot
+Resource  ../../POMs/Dashboard/Onboarding/OnboardFinish.robot
 
-Test Setup  Open Instamojo    ${browser}
+Suite Setup  Open Instamojo    headlesschrome
+Test Setup    back to homepage
 Test Teardown  Close Instamojo
 
 *** Test Cases ***

@@ -1,13 +1,11 @@
 *** Settings ***
-Documentation  Add Product
 Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/LHSPage.robot
 Resource  ../../POMs/Dashboard/Products/ProductListPage.robot
 Resource  ../../POMs/Dashboard/Products/AddProductPage.robot
 
-Test Setup  Open Instamojo    ${browser}
-Test Teardown  Close Instamojo
+Test Setup    back to homepage
 
 *** Variables ***
 ${intial_count}
@@ -16,7 +14,7 @@ ${final_count}
 *** Test Cases ***
 Add a physical product
     [Tags]    Smoke
-    LoginPage.Login To Instamojo    ${username}  ${password}
+    #LoginPage.Login To Instamojo    ${username}  ${password}
     LHSPage.Open Product List Page
 
     ${intial_count}   ProductListPage.Get product count
