@@ -20,7 +20,7 @@ add store logo
     wait until element is visible    ${LogoHeading}
     page should contain element    ${LogoHeading}
     UploadImage.upload an image    ${UploadLogoBtn}    ${LogoURL}
-    UploadImage.upload 1st image as logo
+    UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveLogoBtn}
     click element    ${SaveLogoBtn}
 
