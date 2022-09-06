@@ -48,7 +48,7 @@ change the Welcome text format
     select frame    ${frame}
     wait until element is enabled  ${WelcomeSaveBtn}
     run keyword and ignore error    scroll element into view  ${WelcomeSaveBtn}
-    Util01.select all textfield  xpath://h1[normalize-space()='Welcome']
+    Util01.select all textfield  ${WelcomeInputbox}
     click element    ${quillEditorSizeDD}
     click element    ${quillEditorSizeLarge}
     click element    ${WelcomeSaveBtn}

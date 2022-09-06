@@ -39,7 +39,7 @@ add store favicon
     wait until element is visible  ${FaviconHeading}
     page should contain element    ${FaviconHeading}
     UploadImage.upload an image    ${UploadFaviconBtn}    ${FaviconURL}
-    UploadImage.upload 1st image as logo
+    UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveFaviconBtn}
     click element    ${SaveFaviconBtn}
 
