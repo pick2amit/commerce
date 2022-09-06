@@ -42,6 +42,7 @@ update the Welcome section
     click element    ${WelcomeSaveBtn}
     page should contain    Updated Successfully
     wait until element is not visible  xpath:(//div[contains(text(),'Updated Successfully')])[1]    timeout=10s
+    capture page screenshot
     click element    xpath://button[@class='p-16 focus:outline-none']
 
 change the Welcome text format
