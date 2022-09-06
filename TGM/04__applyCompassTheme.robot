@@ -12,7 +12,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Select theme for user: ${email}
-    [Tags]    theme    tgm
+    [Tags]    tgmp
 *** Keywords ***
 Select theme
     [Arguments]    ${email}    ${password}

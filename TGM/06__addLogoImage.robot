@@ -12,7 +12,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Add logo for user: ${email}
-    [Tags]    logo    tgm
+    [Tags]    tgmp
 
 *** Keywords ***
 add logo
