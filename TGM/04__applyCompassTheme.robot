@@ -11,15 +11,13 @@ Test Template  Select theme
 Suite Teardown    Close Instamojo
 
 *** Test Cases ***
-Select theme for user: ${useremail}
-    [Tags]    theme
+Select theme for user: ${email}
+    [Tags]    theme    tgm
 *** Keywords ***
 Select theme
-    [Arguments]    ${useremail}    ${userpassword}
+    [Arguments]    ${email}    ${password}
     loginpage.Verify the login page is displayed
-    loginpage.Login to instamojo  ${useremail}    ${userpassword}
-    loginpage.Verify the success login
-
+    loginpage.Login to instamojo  ${email}    ${password}
     LHSPage.Open theme page
     ${CurrentTheme}    ThemesPage.get the applied theme
     pass execution if    '${CurrentTheme}' == 'Compass'    Compass Theme already applied.

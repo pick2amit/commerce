@@ -11,8 +11,8 @@ Test Template  add logo
 Suite Teardown    Close Instamojo
 
 *** Test Cases ***
-Add logo for user: ${useremail}
-    [Tags]    logo
+Add logo for user: ${email}
+    [Tags]    logo    tgm
 
 *** Keywords ***
 add logo

@@ -19,17 +19,18 @@ add banner for: ${email}
 
 *** Keywords ***
 add banner
-    [Arguments]    ${email}  ${password}
-    loginpage.Verify the login page is displayed
-    loginpage.Login to instamojo  amit_kt501    12345678
+    NO OPERATION
+#    [Arguments]    ${email}  ${password}
+#    loginpage.Verify the login page is displayed
+#    loginpage.Login to instamojo  ${email}  ${password}
     loginpage.Verify the success login
-    LHSPage.Open edit theme page
-    EditThemePage.expand banner01
-    EditThemePage.delete banner01 image
-    EditThemePage.add banner01 image    ${Banner01ImageURL}
-    EditThemePage.select 1st image to upload
-    EditThemePage.enter banner01 heading    Banner01Heading
-    EditThemePage.enter banner01 subheading    Banner01SubHeading
-    EditThemePage.select slider type    ${slider01Type}
-    EditThemePage.save banner image
-    EditThemePage.Verify add banner success
+#    LHSPage.Open edit theme page
+#    EditThemePage.expand banner01
+#    EditThemePage.delete banner01 image
+#    EditThemePage.add banner01 image    ${Banner01ImageURL}
+#    EditThemePage.select 1st image to upload
+#    EditThemePage.enter banner01 heading    Banner01Heading
+#    EditThemePage.enter banner01 subheading    Banner01SubHeading
+#    EditThemePage.select slider type    ${slider01Type}
+#    EditThemePage.save banner image
+#    EditThemePage.Verify add banner success

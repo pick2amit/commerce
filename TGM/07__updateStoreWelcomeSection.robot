@@ -11,7 +11,7 @@ Test Teardown    Close Instamojo
 
 *** Test Cases ***
 Update store's About us section for: ${email}
-    [Tags]    storeupdate
+    [Tags]    storeupdate    tgm
 
 *** Keywords ***
 update store welcome section
