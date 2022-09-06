@@ -44,6 +44,6 @@ add store favicon
     click element    ${SaveFaviconBtn}
 
 Verify logo added
-    page should contain    Updated Successfully
-    wait until element is visible    ${LogoImage}    timeout=8s
+    #page should contain    Updated Successfully
+    wait until element is visible    ${LogoImage}    timeout=10s
     page should contain element    ${LogoImage}
