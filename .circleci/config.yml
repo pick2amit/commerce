@@ -26,7 +26,7 @@ commands:
       - run:
           name: "Run Test Cases"
           command: |
-              robot -d Results -v env:prod -i Smoke TestSuite/SmokeTestCommerceDashboard/
+              robot -d Results -v env:prod TGM/
   prepare-result:
       steps:
         - store_artifacts:

@@ -66,9 +66,22 @@ ${MojoPlus}  xpath://span[normalize-space()='MojoPlus']
 ${MojoPlusRewards}  xpath:(//span[contains(text(),'Rewards')])[1]
 ${MojoPlusBenefits}  xpath://span[normalize-space()='Benefits']
 
+#Header elements
+${UserProfileLink}    xpath://div/ul/li[2]/div/div/div/a/span
+${DropDownSubscriptionPlan}    xpath://a[normalize-space()='Subscription Plan']
+${DropDownOnlineStore}    xpath://a[normalize-space()='My Online Store']
+${AllPlanLink}    xpath://a[normalize-space()='View all plans']
+${DropDownLogout}    xpath://a[normalize-space()='Log Out']
+${setupStoreBtn}    xpath://div[@class='css-1y0q8yn']
+${setupStoreBtn2}    xpath://button[normalize-space()='Set-up Online Store']
 *** Keywords ***
 Click on the Create New button
     click element  ${createnewbtn}
+    #wait until element is visible  ${setupStoreBtn}  timeout=10s
+    sleep    2s
+    RUN KEYWORD AND IGNORE ERROR    click element    ${setupStoreBtn}
+    run keyword and ignore error    click element    ${setupStoreBtn2}
+#    click element    ${setupStoreBtn2}
 
 Open product list page
     scroll element into view    ${Products}
@@ -79,3 +92,45 @@ Open category list page
     scroll element into view    ${Products}
     click element    ${Products}
     click element    ${Categories}
+
+# added for TGM project
+Open edit theme page
+    scroll element into view    ${StoreSetup}
+    click element  ${StoreSetup}
+    click element    ${EditTheme}
+
+Open theme page
+    scroll element into view    ${StoreSetup}
+    click element  ${StoreSetup}
+    click element    ${StoreThemes}
+
+Open logo page
+    scroll element into view    ${StoreSetup}
+    click element  ${StoreSetup}
+    click element    ${StoreLogo}
+
+Open pages & menu page
+    scroll element into view    ${StoreSetup}
+    click element  ${StoreSetup}
+    click element    ${StorePage&Menu}
+
+Open plan list page
+    click element    ${AllPlanLink}
+
+Open subscription plan from profile
+    wait until element is enabled    ${UserProfileLink}
+    click element    ${UserProfileLink}
+    sleep    1s
+    click element    ${DropDownSubscriptionPlan}
+
+Open store from profile
+    wait until element is enabled    ${UserProfileLink}
+    click element    ${UserProfileLink}
+    sleep    1s
+    click element    ${DropDownOnlineStore}
+
+Logout
+    wait until element is visible    ${UserProfileLink}    timeout=10s
+    click element    ${UserProfileLink}
+    click element    ${DropDownLogout}
+    sleep    2s

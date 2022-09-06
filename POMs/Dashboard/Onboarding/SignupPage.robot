@@ -25,7 +25,8 @@ Insert signup username
       ${Random} =  Generate Random String  10  [LOWER]
       ${SignUpUN} =    Set Variable  automation-${Random}${Domain}
       sleep  2s
-      Input Text  ${SignUpUNTextBox}  ${SignUpUN}
+      #Input Text  ${SignUpUNTextBox}  ${SignUpUN}
+      Input Text  ${SignUpUNTextBox}    amit.kt+sep01@instamojo.com
 
 Insert signup password
      Input Password  ${SignUpPWTextBox}  ${SignUpPW}

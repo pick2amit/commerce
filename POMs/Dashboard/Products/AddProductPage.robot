@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary   timeout=20s
-
+Resource    ../../../CommonUtilities/UploadImage.robot
+#Variables   ../../TestData/testData.py
 *** Variables ***
 ${CurrentURL}
 #Product type locators
@@ -48,56 +49,84 @@ ${ToastMsg}    xpath://div[@class='react-toast-notifications__container css-xg5s
 
 *** Keywords ***
 Select physical product
+    sleep    1s
     Click Element   ${PhysicalProduct}
-    sleep    4s
+
 Select product image
     sleep    2s
     Choose File    ${AddImage}  ${EXECDIR}/DataDriven/dusk.png
     wait until element is not visible    ${uploadProgressBar}    timeout=15s
     #wait until element is visible    ${removeimage}    timeout=15s
+
+Add product image
+    [Arguments]    ${ProductImageURL}
+    UploadImage.upload an image    xpath://*[contains(text(),'Add Image')]    ${ProductImageURL}
+    UploadImage.upload 1st image as logo
+
 Remove image
     Click Element    ${removeimage}
     sleep    2s
 Enter product title
-    Input Text    ${Title}  ${product_title}
+    [Arguments]    ${product_title}
+    press keys    ${Title}  ${product_title}
 Enter product description
-    Input Text    ${description}  ${product_description}
+    [Arguments]    ${product_description}
+    press keys    ${description}  ${product_description}
 Select fixed price
     Click Element    ${fixedpricebtn}
 Select PWYW price
     Click Element    ${PWYWBtn}
 Select free price
     Click Element    ${freebtn}
+
 Enter selling price
+    [Arguments]    ${product_price}
     Input Text    ${SellingPrice}  ${product_price}
 Enter discounted price
+    [Arguments]    ${product_discountedPrice}
     Click Element    ${discountedpricecheckbox}
     Input Text    ${discountedprice}  ${product_discountedPrice}
 Enter stock
+    [Arguments]    ${product_stock}
     Input Text    ${stock}  ${product_stock}
+
+Enter unlimited stock
+    scroll element into view    ${unlimitedstock}
+    click element    ${unlimitedstock}
 Enter min order quantity
+    [Arguments]    ${minimum_orderLimit}
     #scroll element into view    ${minorderlimit}
     #sleep    2s
     Input Text    ${minorderlimit}    ${minimum_orderLimit}
 Enter max order quantity
+    [Arguments]    ${maximum_orderLimit}
     Input Text    ${maxorderlimit}  ${maximum_orderLimit}
 Enter SKU
+    [Arguments]    ${product_sku}
     Input Text    ${sku}  ${product_sku}
 Enter shipwithin days
+    [Arguments]    ${ship_days}
     Input Text    ${shipwithin}  ${ship_days}
 Enter product weight
+    [Arguments]    ${product_weight}
     Input Text    ${weight}  ${product_weight}
 Enter meta title
+    [Arguments]    ${product_meta_title}
     Input Text    ${metatitle}  ${product_meta_title}
 Enter meta description
+    [Arguments]    ${product_meta_description}
     Input Text    ${metadescription}  ${product_meta_description}
 Enter canonical url
+    [Arguments]    ${product_canonical_url}
     Input Text    ${canonicalurl}  ${product_canonical_url}
 Enter thankyou note
+    [Arguments]    ${product_thanks_note}
     Input Text    ${thanksnote}  ${product_thanks_note}
 Enter redirect url
+    [Arguments]    ${product_redirect_url}
     Input Text    ${redirecturl}  ${product_redirect_url}
 Enter webhook url
+    [Arguments]    ${product_webhook_url}
     Input Text    ${webhookurl}  ${product_webhook_url}
 Save product
     Click Element    ${savebtn}

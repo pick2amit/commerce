@@ -30,6 +30,7 @@ CLick on Next Button of Step03
     Click Button  ${Next:ChooseYourCategory}
 
 Verify the onboard step03 page is displayed
-  Page should contain element  ${SellingDetailHeading}
-  Page should contain element  ${PhysicalProduct}
-  Page should contain element  ${Next:ChooseYourCategory}
+    wait until element is visible  ${SellingDetailHeading}  timeout=10s
+    Page should contain element  ${SellingDetailHeading}
+    Page should contain element  ${PhysicalProduct}
+    Page should contain element  ${Next:ChooseYourCategory}

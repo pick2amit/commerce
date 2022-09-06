@@ -29,6 +29,7 @@ Click on Next Button of Step02
 
 
 Verify the onboard step02 page is displayed
+  wait until element is visible  ${BusinesDetailHeading}  timeout=10s
   Page should contain element  ${BusinesDetailHeading}
   Page should contain element  ${InstagramUN}
   Page should contain element  ${Next:WhatAreYouSelling}
