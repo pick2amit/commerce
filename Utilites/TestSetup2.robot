@@ -17,5 +17,5 @@ Close Instamojo
 logout & open loginpage
     #LHSPage.Logout
     go to    https://www.instamojo.com/accounts/logout
-    sleep    2s
+    wait until element is visible    xpath://a[normalize-space()='Log In']    timeout=10s
     Go to    ${url2}

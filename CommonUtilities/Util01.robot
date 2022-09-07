@@ -5,7 +5,7 @@ Library  SeleniumLibrary
 select all textfield
     [Arguments]    ${fieldLocator}
     Press Keys    ${fieldLocator}    CONTROL+a
-    Press Keys    ${fieldLocator}    COMMAND+a
+    #Press Keys    ${fieldLocator}    COMMAND+a
 
 clear input textfield
     [Arguments]    ${fieldLocator}
