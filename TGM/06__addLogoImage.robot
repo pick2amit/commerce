@@ -12,14 +12,13 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Add logo for user: ${email}
-    [Tags]    tgmp
+    [Tags]    tgmp    logo
 
 *** Keywords ***
 add logo
     [Arguments]    ${email}    ${password}    ${logo_image}
     loginpage.Verify the login page is displayed
     loginpage.Login to instamojo  ${email}    ${password}
-    loginpage.Verify the success login
     LHSPage.Open logo page
     LogoPage.add store logo    ${logo_image}
     LogoPage.Verify logo added
