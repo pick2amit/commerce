@@ -15,5 +15,7 @@ Close Instamojo
     close all browsers
 
 logout & open loginpage
-    LHSPage.Logout
+    #LHSPage.Logout
+    go to    https://www.instamojo.com/accounts/logout
+    sleep    2s
     Go to    ${url2}

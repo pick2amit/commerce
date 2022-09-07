@@ -10,7 +10,7 @@ select all textfield
 clear input textfield
     [Arguments]    ${fieldLocator}
     Press Keys    ${fieldLocator}    CONTROL+a+CONTROL+x
-    Press Keys    ${fieldLocator}    COMMAND+a+COMMAND+x
+    #Press Keys    ${fieldLocator}    COMMAND+a+COMMAND+x
 
 Click Element Using JavaScript Xpath
     [Arguments]  ${xpath}

@@ -21,6 +21,6 @@ update store welcome section
     LHSPage.Open store from profile
     StoreHomePage.enable editing
     StoreHomePage.update the Welcome section    Welcome \n\n ${about_me}
-    LHSPage.Open store from profile
-    StoreHomePage.enable editing
-    StoreHomePage.change the Welcome text format
+#    LHSPage.Open store from profile
+#    StoreHomePage.enable editing
+#    StoreHomePage.change the Welcome text format
