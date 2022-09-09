@@ -15,7 +15,7 @@ ${slider01Type}    all
 
 *** Test Cases ***
 add banner for: ${email}
-    [Tags]    add_banner
+    [Tags]    add_banner    all
 
 *** Keywords ***
 add banner

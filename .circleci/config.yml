@@ -26,19 +26,7 @@ commands:
       - run:
           name: "Run Test Cases"
           command: |
-              robot -d Results --output original.xml -v env:prod -i apply_theme TGM/
-  run-fail-tests:
-    steps:
-      - run:
-          name: "Re-Run Fail Test Cases"
-          command: |
-            robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i apply_theme TGM/
-  merge-result:
-    steps:
-      - run:
-          name: "Prepare final result"
-          command: |
-            rebot -d Results --merge Results/original.xml Results/rerun.xml
+              robot -d Results --output original.xml -v env:prod -i all TGM/
   prepare-result:
       steps:
         - store_artifacts:
@@ -55,8 +43,6 @@ jobs:
       - install-dependencies
       - setup-browser
       - run-tests
-      - run-fail-tests
-      - merge-result
       - prepare-result
 
 workflows:
