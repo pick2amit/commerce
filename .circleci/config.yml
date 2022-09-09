@@ -26,7 +26,7 @@ commands:
       - run:
           name: "Run Test Cases"
           command: |
-              robot -d Results --output original.xml -v env:prod -i all TGM/
+              robot -d Results --output original.xml -v env:prod -i add_banner TGM/
   prepare-result:
       steps:
         - store_artifacts:
