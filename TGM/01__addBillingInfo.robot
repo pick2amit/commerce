@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM - Auto-Batch.xlsx    sheet_name=PD-1
+Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/Onboarding/compliancePage.robot
@@ -11,7 +11,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Add GST PAN details for: ${email}
-    [Tags]    cmp
+    [Tags]    billing_info    all
 
 *** Keywords ***
 Add compliance

@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM - Auto-Batch.xlsx    sheet_name=PD-1
+Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -13,7 +13,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 upgrade user plan for: ${email}
-    [Tags]    upgrade
+    [Tags]    upgrade_plan    all
 
 *** Keywords ***
 plan upgrade

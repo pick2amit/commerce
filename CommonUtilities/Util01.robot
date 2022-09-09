@@ -22,12 +22,6 @@ Type BMP characters
     [Arguments]    ${code}    ${text}
     log    ${code}
     Execute Javascript  document.getElementById('${code}').value = '${text}'
-    #Execute Javascript  document.evaluate('${xpath}',document.body,null,9,null).singleNodeValue.value = '${text}'
-
-#    click element    ${xpath}
-#    Execute javascript
-#    ...    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;
-#    ...    _editor.setValue('${text}');
 
 My Scroll Element Into View
     [Arguments]    ${Element}

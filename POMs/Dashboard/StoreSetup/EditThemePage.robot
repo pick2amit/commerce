@@ -5,7 +5,7 @@ Resource    ../../../CommonUtilities/Util01.robot
 
 *** Variables ***
 ${BannerPageHeading}    xpath://h3[normalize-space()='Slider Images']
-${sliderCheckbox}    xpath://label[normalize-space()='Slider Enabled']
+${sliderCheckbox}    xpath://label[normalize-space()='Enable Slider Image']
 ${Banner01Detail}    xpath:(//*[@id='slider-image-cnt'])[1]
 ${Banner01UploadBtn}    xpath:(//*[contains(text(),'+ Upload Image')])[1]
 ${HeadingToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckbox']
@@ -13,15 +13,32 @@ ${Banner01HeadingInputbox}    xpath://input[@name='slider_heading1']
 ${Banner01SubHeadingInputbox}    xpath://input[@name='slider_subheading1']
 ${banner01link}    xpath://input[@name='slider_link1']
 ${BannerTypeDropdown}    xpath://select[@name='slider_type1']
+${Banner01ButtonText}    xpath://input[@name='slider_button_label_1']
 ${SaveBannerBtn}    xpath://button[normalize-space()='Save Slide']
 
+${banner01TextToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckbox']
+${banner01ButtontToggleBtn}    xpath://label[@for='slider-button-toggle1SettingCheckbox']
 *** Keywords ***
 select slider checkbox
     click element    ${sliderCheckbox}
 
 expand banner01
+    wait until element is visible    ${Banner01Detail}
     click element    ${Banner01Detail}
 
+check and delete if banner already added
+    ${count}=   get element count    xpath://form[1]/div/div[2]/div[1]/div
+    Run Keyword If   ${count} > 0    delete banner01 image
+
+disable text on the banner01
+    ${count}=   get element count    ${Banner01HeadingInputbox}
+    Run Keyword If   ${count} > 0    click element  ${banner01TextToggleBtn}
+    wait until element is not visible  ${Banner01HeadingInputbox}
+
+disable button on the banner01
+    ${count}=   get element count    ${Banner01ButtonText}
+    Run Keyword If   ${count} > 0    click element  ${banner01ButtontToggleBtn}
+    wait until element is not visible  ${Banner01ButtonText}
 
 add banner01 image
     [Arguments]    ${Banner01ImageURL}

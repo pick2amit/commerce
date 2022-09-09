@@ -61,13 +61,14 @@ Select product image
 Add product image
     [Arguments]    ${ProductImageURL}
     UploadImage.upload an image    xpath://*[contains(text(),'Add Image')]    ${ProductImageURL}
-    UploadImage.upload 1st image as logo
+    UploadImage.upload 1st image just uploaded
 
 Remove image
     Click Element    ${removeimage}
     sleep    2s
 Enter product title
     [Arguments]    ${product_title}
+    wait until element is enabled  ${Title}  timeout=10s
     press keys    ${Title}  ${product_title}
 Enter product description
     [Arguments]    ${product_description}

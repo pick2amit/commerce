@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM - Auto-Batch.xlsx    sheet_name=PD-1
+Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -12,7 +12,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Add logo for user: ${email}
-    [Tags]    tgmp    logo
+    [Tags]    add_logo    all
 
 *** Keywords ***
 add logo

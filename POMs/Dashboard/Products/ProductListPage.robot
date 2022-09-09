@@ -32,6 +32,10 @@ Verify add product success
     ${expectedTitle}    get text    ${latestProductTitle}
     element text should be  ${latestProductTitle}    ${expectedTitle}
 
+Verify add product success v2
+    wait until element is visible   ${ToastMsg}    timeout=6s
+    page should contain    Product Added Successfully
+
 Verify product list
     wait until element is visible  ${AllProductHeading}  timeout=25s
     TRY

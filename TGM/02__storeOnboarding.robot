@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM - Auto-Batch.xlsx    sheet_name=PD-1
+Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -17,7 +17,7 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 complete store onboarding for: ${email}
-    [Tags]    onboard
+    [Tags]    onboard    all
 
 *** Keywords ***
 store onboarding

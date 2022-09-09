@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM - Auto-Batch.xlsx    sheet_name=PD-1
+Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -14,19 +14,17 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 add Product for: ${email}
-    [Tags]    product
+    [Tags]    add_product    all
 
 *** Keywords ***
 add physical product
     [Arguments]    ${email}  ${password}    ${username}
     loginpage.Verify the login page is displayed
     loginpage.Login to instamojo  ${email}  ${password}
-    loginpage.Verify the success login
     sleep    2s
     LHSPage.Open product list page
 
-    ${result}=    evaluate    readexcel.read_data_from_excel
-    ...    ("/Users/amittiwari/Documents/QA_v2/QA/DataDriven/TGM - Auto-Batch.xlsx", "Post Data", '${username}')
+    ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-09Sep.xlsx", "Post Data", "${username}")
     log  result: ${result}
     FOR    ${titlegroup}  IN    @{result}
          log    Title Group: ${titlegroup}
@@ -42,6 +40,6 @@ add physical product
         AddProductPage.Enter unlimited stock
         AddProductPage.Enter Shipwithin Days    3
         AddProductPage.Save Product
-        productlistpage.verify add product success
+        productlistpage.verify add product success v2
         sleep    2s
     END
