@@ -30,7 +30,7 @@ enable banner
 
 
 expand banner01
-    wait until element is visible    ${Banner01Detail}
+    wait until element is enabled    ${Banner01Detail}    timeout=10s
     click element    ${Banner01Detail}
 
 check and delete if banner already added
