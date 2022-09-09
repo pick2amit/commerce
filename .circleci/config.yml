@@ -24,7 +24,6 @@ commands:
   run-tests:
     parameters:
       to:
-        #default: "apply_theme"
         type: string
     steps:
       - run:
