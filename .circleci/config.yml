@@ -22,11 +22,10 @@ commands:
             geckodriver --version
             chromedriver --version
   run-tests:
-    testcase_tag:
-        parameters:
-          to:
-            default: "all"
-            type: string
+    parameters:
+      to:
+        default: "apply_theme"
+        type: string
     steps:
       - run:
           name: "Run Test Cases"
