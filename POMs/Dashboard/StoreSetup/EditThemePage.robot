@@ -21,7 +21,7 @@ ${banner01TextToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckb
 ${banner01ButtontToggleBtn}    xpath://label[@for='slider-button-toggle1SettingCheckbox']
 *** Keywords ***
 enable banner
-    wait until element is enabled  ${sliderCheckbox}  timeout=10s
+    wait until element is enabled  ${sliderCheckboxv2}  timeout=10s
     assign id to element    xpath://div/ul/label/span    id_akt01
     execute javascript
     ...  var element=document.querySelector('#id_akt01');
@@ -76,11 +76,11 @@ select slider type
     select from list by value  ${BannerTypeDropdown}    ${Banner01Type}
 
 delete banner01 image
-    scroll element into view    xpath://form[1]/div/div[2]/div[1]/div
+    scroll element into view    ${banner01TextToggleBtn}
     sleep    2s
     click element    xpath://form[1]/div/div[2]/div[1]/div
     sleep    2s
-    #click element    (//*[local-name()='path'])[72]
+    #click element    (//*[name()='svg'])[32]
 save banner image
     wait until element is enabled  ${SaveBannerBtn}    timeout=20s
     scroll element into view    ${SaveBannerBtn}
