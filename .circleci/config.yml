@@ -22,11 +22,16 @@ commands:
             geckodriver --version
             chromedriver --version
   run-tests:
+    testcase_tag:
+        parameters:
+          to:
+            default: "all"
+            type: string
     steps:
       - run:
           name: "Run Test Cases"
           command: |
-              robot -d Results --output original.xml -v env:prod -i add_banner TGM/
+              robot -d Results --output original.xml -v env:prod -i <<parameters.to>> TGM/
   prepare-result:
       steps:
         - store_artifacts:

@@ -18,5 +18,5 @@ logout & open loginpage
     go to    ${url2}
     sleep    2s
     LHSPage.Logout
-    wait until element is visible    (//a[contains(@href,'#')][normalize-space()='Log In'])[1]    timeout=10s
+    wait until element is visible    (//a[contains(@href,'#')][normalize-space()='Log In'])[1]    timeout=15s
     Go to    ${url2}
