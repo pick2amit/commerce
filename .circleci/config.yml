@@ -16,7 +16,7 @@ commands:
   setup-browser:
     steps:
       - browser-tools/install-browser-tools:
-          chrome-version: 103.0.5060.53
+          chrome-version: 105.0.5195.102
       - run:
           name: Verify Browser installation
           command: |
