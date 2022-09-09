@@ -42,7 +42,7 @@ upload an image
     click element    ${finalUploadBtn}
 
 upload 1st image just uploaded
-    wait until element is not visible    xpath://div[@class='fsp-summary__item-progress']     #timeout=10s
+    wait until element is not visible    xpath://div[@class='fsp-summary__item-progress']     timeout=10s
     wait until element is not visible    ${ToastMsg}    timeout=6s
     #sleep    1s
     scroll element into view  ${1stImageCheckbox}

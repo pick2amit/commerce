@@ -6,6 +6,7 @@ Resource    ../../../CommonUtilities/Util01.robot
 *** Variables ***
 ${BannerPageHeading}    xpath://h3[normalize-space()='Slider Images']
 ${sliderCheckbox}    xpath://label[normalize-space()='Enable Slider Image']
+${sliderCheckboxv2}    xpath://input[@type='checkbox' and @name='slider']    #xpath:(//input[@type='checkbox'])[1]
 ${Banner01Detail}    xpath:(//*[@id='slider-image-cnt'])[1]
 ${Banner01UploadBtn}    xpath:(//*[contains(text(),'+ Upload Image')])[1]
 ${HeadingToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckbox']
@@ -19,8 +20,14 @@ ${SaveBannerBtn}    xpath://button[normalize-space()='Save Slide']
 ${banner01TextToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckbox']
 ${banner01ButtontToggleBtn}    xpath://label[@for='slider-button-toggle1SettingCheckbox']
 *** Keywords ***
-select slider checkbox
-    click element    ${sliderCheckbox}
+enable banner
+    wait until element is enabled  ${sliderCheckbox}  timeout=10s
+    assign id to element    xpath://div/ul/label/span    id_akt01
+    execute javascript
+    ...  var element=document.querySelector('#id_akt01');
+    ...  element.parentNode.removeChild(element);
+    select checkbox  ${sliderCheckboxv2}
+
 
 expand banner01
     wait until element is visible    ${Banner01Detail}

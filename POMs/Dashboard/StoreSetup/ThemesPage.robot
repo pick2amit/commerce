@@ -9,6 +9,7 @@ ${CompassThemeApplyBtn}    xpath://span[contains(text(),'Compass')]/parent::div/
 ${ComfortThemeApplyBtn}    xpath://span[contains(text(),'Comfort')]/parent::div/child::div/div[2]/span
 ${ApplyTheme}    xpath://button[normalize-space()='Apply Theme']
 ${DoneBtn}    xpath://button[normalize-space()='Done']
+${CurrentTheme}    xpath://b
 
 *** Keywords ***
 select comfort theme
@@ -47,7 +48,8 @@ select compass theme
 #    pass execution if  ${Theme_status}=='Applied'    Theme already applied
 
 get the applied theme
-    ${Applied_theme}=    get text     xpath://b
+    wait until element is enabled  ${CurrentTheme}  timeout=10s
+    ${Applied_theme}=    get text  ${CurrentTheme}
     [Return]   ${Applied_theme}
 
 Verify compass theme applied

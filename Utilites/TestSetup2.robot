@@ -8,7 +8,7 @@ Open Instamojo
     set log level    debug
     Open Browser  ${url2}  ${browser}
     Maximize Browser Window
-    Set Selenium Implicit Wait  10s
+    Set Selenium Implicit Wait  15s
 
 Close Instamojo
     sleep    2s
