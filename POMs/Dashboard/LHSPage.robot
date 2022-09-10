@@ -130,7 +130,7 @@ Open store from profile
     click element    ${DropDownOnlineStore}
 
 Logout
-    wait until element is visible    ${UserProfileLink}    timeout=10s
+    wait until element is enabled    ${UserProfileLink}    timeout=15s
     click element    ${UserProfileLink}
     click element    ${DropDownLogout}
     sleep    2s
