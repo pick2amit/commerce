@@ -17,9 +17,6 @@ ${SaveFaviconBtn}    xpath:(//button[contains(normalize-space(),'Save')])[2]
 *** Keywords ***
 add store logo
     [Arguments]    ${LogoURL}
-    wait until element is visible    ${LogoHeading}
-    page should contain element    ${LogoHeading}
-    sleep    1s
     UploadImage.upload an image    ${UploadLogoBtn}    ${LogoURL}
     UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveLogoBtn}
@@ -43,6 +40,14 @@ add store favicon
     UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveFaviconBtn}
     click element    ${SaveFaviconBtn}
+
+Verify logo page displayed
+    sleep    2s
+    wait until element is visible    ${LogoHeading}
+    page should contain element    ${LogoHeading}
+    ${Selenium_timeout}=    get selenium timeout
+    Log    ${Selenium_timeout}
+
 
 Verify logo added
     #page should contain    Updated Successfully

@@ -20,5 +20,6 @@ add logo
     loginpage.Verify the login page is displayed
     loginpage.Login to instamojo  ${email}    ${password}
     LHSPage.Open logo page
+    LogoPage.Verify logo page displayed
     LogoPage.add store logo    ${logo_image}
     LogoPage.Verify logo added
