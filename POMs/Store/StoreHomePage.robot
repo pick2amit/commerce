@@ -24,11 +24,14 @@ ${quillEditorSizeNormal}    xpath://div[@id='toolbar_home_content1']/child::span
 ${quillEditorSizeLarge}    xpath://div[@id='toolbar_home_content1']/child::span[3]/span[2]/span[3]
 ${quillEditorSizeHuge}    xpath://div[@id='toolbar_home_content1']/child::span[3]/span[2]/span[4]
 
+${EditPageBtn}    xpath://*[normalize-space()='Edit Page']
+${BackBtn}    xpath://button[@class='p-16 focus:outline-none']
+
 *** Keywords ***
 enable editing
     switch window    NEW
-    wait until element is enabled  xpath://*[normalize-space()='Edit Page']    timeout=10s
-    click element    xpath://*[normalize-space()='Edit Page']
+    wait until element is enabled  ${EditPageBtn}    timeout=10s
+    click element    ${EditPageBtn}
 
 update the Welcome section
     [Arguments]    ${Content}
@@ -39,11 +42,12 @@ update the Welcome section
     Util01.clear input textfield    ${WelcomeInputbox}
     #input text  ${WelcomeInputbox}  ${Content}
     press keys    ${WelcomeInputbox}  ${Content}
+    sleep    2s
+    Util01.select all textfield  ${WelcomeInputbox}
+    click element    ${quillEditorSizeDD}
+    click element    ${quillEditorSizeLarge}
+    run keyword and ignore error    scroll element into view  ${WelcomeSaveBtn}
     click element    ${WelcomeSaveBtn}
-    page should contain    Updated Successfully
-    wait until element is not visible  xpath:(//div[contains(text(),'Updated Successfully')])[1]    timeout=10s
-    capture page screenshot
-    click element    xpath://button[@class='p-16 focus:outline-none']
 
 change the Welcome text format
     select frame    ${frame}
@@ -52,5 +56,10 @@ change the Welcome text format
     Util01.select all textfield  ${WelcomeInputbox}
     click element    ${quillEditorSizeDD}
     click element    ${quillEditorSizeLarge}
+    sleep    1s
     click element    ${WelcomeSaveBtn}
     page should contain    Updated Successfully
+
+Verify the content update success
+    page should contain    Updated Successfully
+    wait until element is not visible  xpath:(//div[contains(text(),'Updated Successfully')])[1]    timeout=10s
