@@ -33,7 +33,7 @@ add physical product
          log    Image URL: ${titlegroup}[2]
         ProductListPage.Click Add Product
         AddProductPage.Select Physical Product
-        #AddProductPage.Add product image  ${titlegroup}[2]
+        AddProductPage.Add product image  ${titlegroup}[2]
         AddProductPage.Enter Product Title    ${titlegroup}[0]
         AddProductPage.Enter Product Description  ${titlegroup}[1]
         AddProductPage.Enter Selling Price    100

@@ -87,5 +87,10 @@ save banner image
     scroll element into view    ${SaveBannerBtn}
     click element    ${SaveBannerBtn}
 
+Verify banner page displayed
+    sleep    2s
+    wait until element is visible    ${BannerPageHeading}
+    page should contain element    ${BannerPageHeading}
+
 Verify add banner success
     page should contain    Updated Successfully

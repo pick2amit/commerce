@@ -45,8 +45,8 @@ Verify logo page displayed
     sleep    2s
     wait until element is visible    ${LogoHeading}
     page should contain element    ${LogoHeading}
-    ${Selenium_timeout}=    get selenium timeout
-    Log    ${Selenium_timeout}
+#    ${Selenium_timeout}=    get selenium timeout
+#    Log    ${Selenium_timeout}
 
 
 Verify logo added
