@@ -6,7 +6,7 @@ Resource    ../../../CommonUtilities/UploadImage.robot
 ${LogoImage}    xpath://form/child::div/img
 ${LogoHeading}    xpath://h1[normalize-space()='Add Logo']
 ${FaviconHeading}    xpath://h1[normalize-space()='Add Favicon']
-${UploadLogoBtn}    xpath:(//form/div[2]/div)[1]
+${UploadLogoBtn}    xpath:(//form/div[2]/div/i)[1]
 ${ClearLogoCheckbox}    xpath://label[normalize-space()='Clear Logo']
 ${SaveLogoBtn}    xpath:(//button[contains(normalize-space(),'Save')])[1]
 
@@ -19,6 +19,7 @@ add store logo
     [Arguments]    ${LogoURL}
     wait until element is visible    ${LogoHeading}
     page should contain element    ${LogoHeading}
+    sleep    1s
     UploadImage.upload an image    ${UploadLogoBtn}    ${LogoURL}
     UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveLogoBtn}
