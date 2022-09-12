@@ -24,6 +24,7 @@ Get product count
     [Return]    ${result}
 
 Click Add Product
+    wait until element is enabled    ${AddProductBtn}
     Click Element   ${AddProductBtn}
 
 Verify add product success

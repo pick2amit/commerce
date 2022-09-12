@@ -23,6 +23,7 @@ add physical product
     loginpage.Login to instamojo  ${email}  ${password}
     sleep    2s
     LHSPage.Open product list page
+    ProductListPage.Verify product list
 
     ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-12Sep.xlsx", "Post Data", "${username}")
     log  result: ${result}
@@ -31,7 +32,6 @@ add physical product
          log    Title: ${titlegroup}[0]
          log    Desc: ${titlegroup}[1]
          log    Image URL: ${titlegroup}[2]
-        ProductListPage.Verify product list
         ProductListPage.Click Add Product
         AddProductPage.Select Physical Product
         AddProductPage.Add product image  ${titlegroup}[2]
@@ -42,5 +42,5 @@ add physical product
         AddProductPage.Enter Shipwithin Days    3
         AddProductPage.Save Product
         productlistpage.verify add product success v2
-        sleep    2s
+        sleep    1s
     END
