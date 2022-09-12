@@ -31,6 +31,7 @@ add physical product
          log    Title: ${titlegroup}[0]
          log    Desc: ${titlegroup}[1]
          log    Image URL: ${titlegroup}[2]
+        ProductListPage.Verify product list
         ProductListPage.Click Add Product
         AddProductPage.Select Physical Product
         AddProductPage.Add product image  ${titlegroup}[2]
