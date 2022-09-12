@@ -130,6 +130,7 @@ Enter webhook url
     [Arguments]    ${product_webhook_url}
     Input Text    ${webhookurl}  ${product_webhook_url}
 Save product
+    scroll element into view    ${savebtn}
     Click Element    ${savebtn}
 Get current url
     ${CurrentURL}  Get Location

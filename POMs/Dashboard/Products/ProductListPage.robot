@@ -39,7 +39,7 @@ Verify add product success v2
 Verify product list
     wait until element is visible  ${AllProductHeading}  timeout=25s
     TRY
-        page should contain element    ${NoProducts}
+        page should contain    No Products
     EXCEPT    # match any error
         ${count}    Get product count
         should be true    ${count} >= 1
