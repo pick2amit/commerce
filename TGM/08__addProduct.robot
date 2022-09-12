@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-09Sep.xlsx   sheet_name=PD1-5
+Library  DataDriver    ../DataDriven/TGM-12Sep.xlsx   sheet_name=PD06-14
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -24,7 +24,7 @@ add physical product
     sleep    2s
     LHSPage.Open product list page
 
-    ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-09Sep.xlsx", "Post Data", "${username}")
+    ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-12Sep.xlsx", "Post Data", "${username}")
     log  result: ${result}
     FOR    ${titlegroup}  IN    @{result}
          log    Title Group: ${titlegroup}
