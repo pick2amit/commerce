@@ -28,6 +28,7 @@ commands:
     steps:
       - run:
           name: "Run Test Cases"
+          no_output_timeout: 45m
           command: |
               robot -d Results -v env:prod -i << pipeline.parameters.test-tag >> TGM/
   prepare-result:
