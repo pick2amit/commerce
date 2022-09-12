@@ -24,6 +24,7 @@ add banner
     loginpage.Login to instamojo  ${email}  ${password}
     LHSPage.Open edit theme page
     EditThemePage.Verify banner page displayed
+    EditThemePage.enable banner
     EditThemePage.expand banner01
     EditThemePage.check and delete if banner already added
     EditThemePage.add banner01 image    ${banner_image}
@@ -33,4 +34,3 @@ add banner
     EditThemePage.select slider type    ${slider01Type}
     EditThemePage.save banner image
     EditThemePage.Verify add banner success
-    EditThemePage.enable banner
