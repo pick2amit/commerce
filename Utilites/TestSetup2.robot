@@ -5,7 +5,7 @@ Variables    ${env}.py
 
 *** Keywords ***
 Open Instamojo
-    set log level    debug
+    #set log level    debug
     Open Browser  ${url2}  ${browser}
     Maximize Browser Window
     Set Selenium Implicit Wait  20s
