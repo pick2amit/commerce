@@ -35,8 +35,8 @@ commands:
     steps:
       - run:
           name: "Rerun fail Test Cases & Merge result"
-            no_output_timeout: 30m
-            command: |
+          no_output_timeout: 30m
+          command: |
               robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i apply_theme TGM/
               rebot -d Results --merge Results/original.xml Results/rerun.xml
   prepare-result:
