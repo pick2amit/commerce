@@ -2,7 +2,7 @@ version: 2.1
 parameters:
   test-tag:
     type: string
-    default: "all"
+    default: "billing_info"
 orbs:
   browser-tools: circleci/browser-tools@1.3.0
   python: circleci/python@2.0.3

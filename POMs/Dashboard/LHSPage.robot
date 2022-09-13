@@ -118,19 +118,26 @@ Open plan list page
     click element    ${AllPlanLink}
 
 Open subscription plan from profile
-    wait until element is enabled    ${UserProfileLink}
+    wait until element is enabled    ${UserProfileLink}    timeout=20s
     click element    ${UserProfileLink}
     sleep    1s
     click element    ${DropDownSubscriptionPlan}
 
 Open store from profile
-    wait until element is enabled    ${UserProfileLink}
+    wait until element is enabled    ${UserProfileLink}    timeout=20s
     click element    ${UserProfileLink}
     sleep    1s
     click element    ${DropDownOnlineStore}
 
+Open profile dropdown & log store URL
+    wait until element is enabled    ${UserProfileLink}    timeout=20s
+    click element    ${UserProfileLink}
+    sleep    1s
+    ${list}=    get element attribute    xpath://a[normalize-space()='My Online Store']    href
+    log    ${list}
+
 Logout
-    wait until element is enabled    ${UserProfileLink}    timeout=15s
+    wait until element is enabled    ${UserProfileLink}    timeout=20s
     click element    ${UserProfileLink}
     click element    ${DropDownLogout}
     sleep    2s
