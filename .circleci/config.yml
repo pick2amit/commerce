@@ -28,16 +28,16 @@ commands:
     steps:
       - run:
           name: "Run Test Cases"
-          no_output_timeout: 45m
+          no_output_timeout: 30m
           command: |
-              robot -d Results --output original.xml -v env:prod -i apply_theme TGM/
+              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
   rerun-fail-merge:
     steps:
       - run:
           name: "Rerun fail Test Cases & Merge result"
           no_output_timeout: 30m
           command: |
-              robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i apply_theme TGM/
+              robot -d Results rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
               rebot -d Results --merge Results/original.xml Results/rerun.xml
   prepare-result:
       steps:
