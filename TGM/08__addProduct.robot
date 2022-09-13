@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-12Sep.xlsx   sheet_name=Sheet5
+Library  DataDriver    ../DataDriven/TGM-13Sep.xlsx   sheet_name=PD15-20
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -25,13 +25,9 @@ add physical product
     LHSPage.Open product list page
     ProductListPage.Verify product list
 
-    ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-12Sep.xlsx", "Post Data", "${username}")
+    ${result}=    evaluate    readexcel.read_data_from_excel("${EXECDIR}/DataDriven/TGM-13Sep.xlsx", "Post Data", "${username}")
     log  result: ${result}
     FOR    ${titlegroup}  IN    @{result}
-         log    Title Group: ${titlegroup}
-         log    Title: ${titlegroup}[0]
-         log    Desc: ${titlegroup}[1]
-         log    Image URL: ${titlegroup}[2]
         ProductListPage.Click Add Product
         AddProductPage.Select Physical Product
         AddProductPage.Add product image  ${titlegroup}[2]
