@@ -134,7 +134,7 @@ Open profile dropdown & log store URL
     click element    ${UserProfileLink}
     sleep    1s
     ${list}=    get element attribute    xpath://a[normalize-space()='My Online Store']    href
-    log    ${list}
+    log to console    ${list}
 
 Logout
     wait until element is enabled    ${UserProfileLink}    timeout=20s
