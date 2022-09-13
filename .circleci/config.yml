@@ -48,7 +48,6 @@ jobs:
       - install-dependencies
       - setup-browser
       - run-tests
-      - rerun-fail-merge
       - prepare-result
 
 workflows:
