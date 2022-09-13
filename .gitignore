@@ -6,3 +6,5 @@ Results/
 !.keep
 *.pyc
 TGM/akt.robot
+.circleci/config2.yml
+
