@@ -28,6 +28,7 @@ Enter Name
 
 Enter Address
     [Arguments]    ${Address}
+    wait until element is enabled  ${AddressInputBox}  timeout=15s
     input text    ${AddressInputBox}    ${Address}
 
 Enter State

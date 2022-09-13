@@ -14,7 +14,7 @@ ${SetupYourOnlineStore}  xpath://a[normalize-space()='Setup Your Online Store']
 
 *** Keywords ***
 Verify the onboard finish page is displayed
-    wait until element is visible  ${OnboardSuccessLogo}  timeout=10s
+    wait until element is visible  ${OnboardSuccessLogo}
     Page should contain element  ${OnboardSuccessLogo}
     Page should contain element  ${Congrats}
     Page should contain element  ${SetupYourOnlineStore}

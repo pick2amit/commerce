@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library    SeleniumLibrary    timeout=20s
 
 *** Variables ***
 ${StoreHeading}    xpath://p[normalize-space()='Online Store']
@@ -25,7 +25,7 @@ ${PlanName}
 *** Keywords ***
 select yearly plan and proceed
     wait until element is visible  ${storeheading}    timeout=20s
-    wait until element is visible  ${CurrentPlanHeading}  timeout=20s
+    wait until element is visible  ${CurrentPlanHeading}  timeout=35s
     scroll element into view    ${SelectPlanBtn}
     #CLICK ELEMENT    ${MonthlyPlanRadioBtn}
     CLICK ELEMENT    ${YearlyPlanRadioBtn}
@@ -42,7 +42,7 @@ Make payment using coupon
     wait until element is enabled    ${PayBtn}
     click element    ${PayBtn}
     sleep    4s
-    wait until element is not visible    ${Loader}    timeout=30s
+    wait until element is not visible    ${Loader}    timeout=45s
     sleep    2s
     select frame  xpath://iframe[@id='imojo-rc-iframe']
     click element  ${PlanUpdateOKBtn}
