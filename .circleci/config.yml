@@ -31,8 +31,7 @@ commands:
           no_output_timeout: 30m
           command: |
               robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
-              $file_exits = exits[[ "Results/rerun.xml" ]]
-              if file_exits ; then rebot -d Results --merge Results/original.xml Results/rerun.xml
+              if exits[[ "Results/rerun.xml" ]] ; then rebot -d Results --merge Results/original.xml Results/rerun.xml
   prepare-result:
       steps:
         - store_artifacts:
