@@ -2,7 +2,7 @@ version: 2.1
 parameters:
   test-tag:
     type: string
-    default: "billing_info"
+    default: "apply_theme"
 orbs:
   browser-tools: circleci/browser-tools@1.3.0
   python: circleci/python@2.0.3
@@ -30,8 +30,9 @@ commands:
           name: "Run Test Cases"
           no_output_timeout: 30m
           command: |
-              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
-              rebot -d Results --merge Results/original.xml Results/rerun.xml
+              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
+#              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
+#              rebot -d Results --merge Results/original.xml Results/rerun.xml
 #              if exits("Results/rerun.xml") ; then rebot -d Results --merge Results/original.xml Results/rerun.xml
   prepare-result:
       steps:
@@ -41,7 +42,7 @@ commands:
 
 jobs:
   run-test:
-    parallelism: 2
+    parallelism: 1
     circleci_ip_ranges: true
     docker:
       - image: cimg/python:3.10.5-browsers
