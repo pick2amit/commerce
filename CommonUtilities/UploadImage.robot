@@ -4,6 +4,7 @@ Library  SeleniumLibrary
 *** Variables ***
 ${InitalUploadBtn}    xpath://button[normalize-space()='Upload Media']
 ${UploadBtn}    xpath:(//span[normalize-space()='Upload'])
+${UploadBtn2}    id:upload-media
 #${uploadImageLink}  xpath://span[@class='fsp-source-list__icon fsp-icon fsp-icon--url']
 #${uploadImageLink}  xpath://*[@title='Link (URL)']
 ${uploadImageLink}  xpath://span[contains(text(),'Link (URL)')]/preceding-sibling::span
@@ -40,6 +41,28 @@ upload an image
     wait until element is visible    ${finalUploadBtn}    timeout=20s
     wait until element is enabled  ${finalUploadBtn}    timeout=20s
     click element    ${finalUploadBtn}
+
+upload an image v2
+    [Arguments]    ${UploadBtnLocator}    ${ImageURL}
+    click element    ${UploadBtnLocator}
+    wait until element is visible    ${UploadBtn2}    timeout=25s
+    click element   ${UploadBtn2}
+
+    wait until element is visible    ${uploadImageLink}    timeout=20s
+    sleep    2s
+    click element at coordinates    ${uploadImageLink}    0    0
+    #click element   ${uploadImageLink}
+    clear element text  ${imageUrlInput}
+    input text    ${imageUrlInput}  ${ImageURL}
+    click element    ${submitImageUrl}
+    wait until element is visible    ${finalUploadBtn}    timeout=20s
+    wait until element is enabled  ${finalUploadBtn}    timeout=20s
+    click element    ${finalUploadBtn}
+
+delete media image
+    [Arguments]    ${UploadBtnLocator}
+    click element    ${UploadBtnLocator}
+
 
 upload 1st image just uploaded
     wait until element is not visible    xpath://div[@class='fsp-summary__item-progress']     timeout=10s

@@ -60,7 +60,8 @@ Select product image
 
 Add product image
     [Arguments]    ${ProductImageURL}
-    UploadImage.upload an image    xpath://*[contains(text(),'Add Image')]    ${ProductImageURL}
+    #UploadImage.upload an image    xpath://*[contains(text(),'Add Image')]    ${ProductImageURL}
+    UploadImage.upload an image v2  xpath://*[contains(text(),'Add Image')]    ${ProductImageURL}
     UploadImage.upload 1st image just uploaded
 
 Remove image

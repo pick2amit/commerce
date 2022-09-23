@@ -50,4 +50,3 @@ store onboarding
 
     # verify the Final page
     OnboardFinish.Verify The Onboard Finish Page Is Displayed
-    sleep    2s
