@@ -42,7 +42,7 @@ commands:
 
 jobs:
   run-test:
-    parallelism: 6
+    parallelism: 2
     circleci_ip_ranges: true
     docker:
       - image: cimg/python:3.10.5-browsers
