@@ -8,6 +8,7 @@ ${couponpage}    xpath://span[normalize-space()='Coupons']
 ${Discounts}  xpath://span[normalize-space()='Discounts']
 ${Addcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/button
 ${deletecoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div[3]
+${deletetoast}     xpath=//body/div[3]
 ${couponmenu}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div/div
 ${editcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div
 ${couponnameinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div/div/ul/li/div[2]/div/input
@@ -90,3 +91,9 @@ Enable coupon options
 Save the coupon
          click element     ${savecoupon}
          page should contain element    ${addcoupon}
+
+Delete Coupon
+         click element    ${couponmenu}
+         click element    ${deletecoupon}
+         handle alert    accept
+         page should contain element    ${deletetoast}
