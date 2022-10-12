@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  Add coupon
+Documentation  delete coupon
 Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
@@ -18,3 +18,4 @@ Verify deleting Coupon
      couponpage.Veriy navigating to coupon page
 #delete coupon
      couponpage.delete coupon
+     couponpage.verify coupon is deleted

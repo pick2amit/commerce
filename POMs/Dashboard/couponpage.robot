@@ -96,4 +96,6 @@ Delete Coupon
          click element    ${couponmenu}
          click element    ${deletecoupon}
          handle alert    accept
-         page should contain element    ${deletetoast}
+
+verify coupon is deleted
+        page should contain element    ${deletetoast}
