@@ -86,6 +86,7 @@ save banner image
     wait until element is enabled  ${SaveBannerBtn}    timeout=20s
     scroll element into view    ${SaveBannerBtn}
     click element    ${SaveBannerBtn}
+    sleep    1s
 
 Verify banner page displayed
     sleep    2s
