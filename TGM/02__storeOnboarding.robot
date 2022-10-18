@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-13Sep.xlsx   sheet_name=PD15-20
+Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=PD1-10
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -24,6 +24,10 @@ store onboarding
     [Arguments]    ${email}    ${password}    ${store_name}
     loginpage.Verify the login page is displayed
     loginpage.Login to instamojo  ${email}    ${password}
+    loginpage.verify the success login
+    ${store_heading}=  get element count    xpath://div[normalize-space()='Online Store']
+    pass execution if    ${store_heading} > 0    Onboarding already completed
+
     LHSPage.Click on the Create New button
     # Onboard STEP-01 Enter the Store name
     OnboardStep01.Enter Store Name    ${store_name}

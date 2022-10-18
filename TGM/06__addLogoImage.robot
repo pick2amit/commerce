@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-13Sep.xlsx   sheet_name=PD15-20
+Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=PD1-10
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -21,5 +21,8 @@ add logo
     loginpage.Login to instamojo  ${email}    ${password}
     LHSPage.Open logo page
     LogoPage.Verify logo page displayed
+    ${status}=    run keyword and return status  LogoPage.Verify logo added
+    pass execution if   ${status}    Logo already added
+
     LogoPage.add store logo    ${logo_image}
     LogoPage.Verify logo added

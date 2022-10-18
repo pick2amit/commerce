@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-13Sep.xlsx   sheet_name=PD15-20
+Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=PD1-10
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -20,4 +20,7 @@ update store welcome section
     loginpage.Login to instamojo  ${email}    ${password}
     LHSPage.Open store from profile
     StoreHomePage.enable editing
+    ${content}=    StoreHomePage.get welcome section content
+    pass execution if    '${content}' == '${about_me}'    Content already updated
+
     StoreHomePage.update the Welcome section    Welcome \n\n ${about_me}

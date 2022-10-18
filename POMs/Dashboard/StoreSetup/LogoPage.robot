@@ -17,6 +17,7 @@ ${SaveFaviconBtn}    xpath:(//button[contains(normalize-space(),'Save')])[2]
 *** Keywords ***
 add store logo
     [Arguments]    ${LogoURL}
+    #UploadImage.upload an image    ${UploadLogoBtn}    ${LogoURL}
     UploadImage.upload an image    ${UploadLogoBtn}    ${LogoURL}
     UploadImage.upload 1st image just uploaded
     wait until element is enabled  ${SaveLogoBtn}

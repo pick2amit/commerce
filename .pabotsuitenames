@@ -1,0 +1,5 @@
+datasources:5c652e5caddd7c91710d11caf928fab251305052
+commandlineoptions:bab8a7d38e4aaa3511a7d52694002cbd0db0647d
+suitesfrom:no-suites-from-option
+file:6ca1bbc8412cca1f938b09e4760265c21b76c9f8
+--test addProduct.add Product for: ${email}

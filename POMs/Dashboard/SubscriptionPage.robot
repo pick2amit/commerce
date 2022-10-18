@@ -48,7 +48,11 @@ Make payment using coupon
     click element  ${PlanUpdateOKBtn}
     unselect frame
 
-Verify plan upgrade
-    sleep    2s
+get current plan
+    sleep    3s
     ${PlanName} =    GET TEXT    ${CurrentPlanName}
+    RETURN   ${PlanName}
+
+Verify plan upgrade
+    ${PlanName} =    get current plan
     should be equal as strings  ${PlanName}  Growth Yearly

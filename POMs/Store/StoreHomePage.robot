@@ -5,7 +5,7 @@ Resource    ../../CommonUtilities/Util01.robot
 *** Variables ***
 ${AboutUsDetail}    xpath:(//h1/span[starts-with(text(),'About Us')]/parent::h1//following-sibling::p)
 ${WelcomeInputbox}    xpath://*[@id="toolbar_home_content1"]/following-sibling::div/div/div/h1
-${WelcomeInputboxPara}    xpath://*[@id="toolbar_home_content1"]/following-sibling::div/div/div/p
+${WelcomeInputboxPara}    xpath://*[@id="toolbar_home_content1"]/following-sibling::div/div/div/p[2]
 ${WelcomeInputboxHeading}    xpath://*[@id="toolbar_home_content1"]/following-sibling::div/div/div/h1
 ${frame}    xpath: //iframe[@name='merchant-desktop-view']
 ${WelcomeSaveBtn}    xpath:(//button[contains(text(),'Save')])[1]
@@ -33,6 +33,14 @@ enable editing
     wait until element is enabled  ${EditPageBtn}    timeout=10s
     click element    ${EditPageBtn}
 
+get welcome section content
+    select frame    ${frame}
+    run keyword and ignore error    scroll element into view  ${WelcomeInputbox}
+    ${Welcomee_description}=  get text    ${WelcomeInputboxPara}
+    unselect frame
+    RETURN    ${Welcomee_description}
+
+
 update the Welcome section
     [Arguments]    ${Content}
     select frame    ${frame}
@@ -48,6 +56,7 @@ update the Welcome section
     click element    ${quillEditorSizeLarge}
     run keyword and ignore error    scroll element into view  ${WelcomeSaveBtn}
     click element    ${WelcomeSaveBtn}
+    unselect frame
 
 change the Welcome text format
     select frame    ${frame}

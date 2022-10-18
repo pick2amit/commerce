@@ -1,5 +1,5 @@
 *** Settings ***
-Library  DataDriver    ../DataDriven/TGM-13Sep.xlsx   sheet_name=PD15-20
+Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=PD1-10
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/LHSPage.robot
@@ -22,3 +22,4 @@ Select theme
     ${CurrentTheme}    ThemesPage.get the applied theme
     pass execution if    '${CurrentTheme}' == 'Compass'    Compass Theme already applied.
     ThemesPage.select compass theme
+    ThemesPage.Verify compass theme applied

@@ -41,12 +41,10 @@ check and delete if banner already added
 disable text on the banner01
     ${count}=   get element count    ${Banner01HeadingInputbox}
     Run Keyword If   ${count} > 0    click element  ${banner01TextToggleBtn}
-    wait until element is not visible  ${Banner01HeadingInputbox}
 
 disable button on the banner01
     ${count}=   get element count    ${Banner01ButtonText}
     Run Keyword If   ${count} > 0    click element  ${banner01ButtontToggleBtn}
-    wait until element is not visible  ${Banner01ButtonText}
 
 add banner01 image
     [Arguments]    ${Banner01ImageURL}
@@ -81,7 +79,7 @@ delete banner01 image
     sleep    2s
     click element    xpath://form[1]/div/div[2]/div[1]/div
     sleep    2s
-    #click element    (//*[name()='svg'])[32]
+
 save banner image
     wait until element is enabled  ${SaveBannerBtn}    timeout=20s
     scroll element into view    ${SaveBannerBtn}
