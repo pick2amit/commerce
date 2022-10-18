@@ -4,3 +4,4 @@ robotframework-requests==0.9.3
 robotframework-selenium2library==3.0.0
 robotframework-seleniumlibrary==6.0.0
 robotframework-datadriver[XLS]
+robotframework-pabot

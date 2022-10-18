@@ -61,7 +61,7 @@ upload an image
     wait until element is enabled  ${finalUploadBtn}    timeout=20s
     click element    ${finalUploadBtn}
 
-    wait until element is not visible  ${uploadProgressBar}
+    wait until element is not visible  ${uploadProgressBar}    timeout=20s
 
 delete media image
     [Arguments]    ${UploadBtnLocator}
