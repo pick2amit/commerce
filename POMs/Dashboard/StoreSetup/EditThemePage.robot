@@ -37,7 +37,7 @@ expand banner01
 
 check and delete if banner already added
     ${count}=   get element count    xpath://form[1]/div/div[2]/div[1]/div
-    Run Keyword If   ${count} > 0    delete banner01 image
+    Run Keyword If   ${count} > 0    delete banner01 image    ${count}
 
 disable text on the banner01
     ${count}=   get element count    ${Banner01HeadingInputbox}
