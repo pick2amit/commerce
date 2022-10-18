@@ -77,13 +77,14 @@ select slider type
 
 delete banner01 image
     [Arguments]    ${element_count}
+    ${element_count}=   evaluate    ${element_count}+1
     sleep    3s
     scroll element into view    ${banner01TextToggleBtn}
-    FOR    ${item}    IN    @{element_count}
-        click element  ${banner01ImageDelete}[${item}]
+    FOR    ${item}    IN RANGE  1    ${element_count}
+        log    ${item}
+        run keyword and ignore error    click element  ${banner01ImageDelete}\[${item}]
     END
     #Execute Javascript    document.evaluate('//form[1]/div/div[2]/div[1]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
-    #wait until keyword succeeds    5x    5    click element    ${banner01ImageDelete}
     sleep    2s
 
 save banner image
