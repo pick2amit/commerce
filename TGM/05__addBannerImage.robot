@@ -29,8 +29,8 @@ add banner
     EditThemePage.check and delete if banner already added
     EditThemePage.add banner01 image    ${banner_image}
     EditThemePage.select 1st image to upload
-    EditThemePage.disable text on the banner01
-    EditThemePage.disable button on the banner01
+#    EditThemePage.disable text on the banner01
+#    EditThemePage.disable button on the banner01
     EditThemePage.select slider type    ${slider01Type}
     EditThemePage.save banner image
     EditThemePage.Verify add banner success
