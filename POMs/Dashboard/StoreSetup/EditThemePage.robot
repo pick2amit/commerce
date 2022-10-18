@@ -20,7 +20,7 @@ ${SaveBannerBtn}    xpath://button[normalize-space()='Save Slide']
 
 ${banner01TextToggleBtn}    xpath://label[@for='slider-text-toggle1SettingCheckbox']
 ${banner01ButtontToggleBtn}    xpath://label[@for='slider-button-toggle1SettingCheckbox']
-${banner01ImageDelete}    //form[1]/div/div[2]/div[1]/div
+${banner01ImageDelete}    xpath:(//form[1]/div/div[2]/div[1]/div)
 *** Keywords ***
 enable banner
     wait until element is enabled  ${sliderCheckboxv2}  timeout=10s
@@ -76,10 +76,14 @@ select slider type
     select from list by value  ${BannerTypeDropdown}    ${Banner01Type}
 
 delete banner01 image
-    sleep    1s
+    [Arguments]    ${element_count}
+    sleep    3s
     scroll element into view    ${banner01TextToggleBtn}
-    Execute Javascript    document.evaluate('${banner01ImageDelete}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
-    #click element    ${banner01ImageDelete}
+    FOR    ${item}    IN    @{element_count}
+        click element  ${banner01ImageDelete}[${item}]
+    END
+    #Execute Javascript    document.evaluate('//form[1]/div/div[2]/div[1]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
+    #wait until keyword succeeds    5x    5    click element    ${banner01ImageDelete}
     sleep    2s
 
 save banner image
