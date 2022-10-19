@@ -5,8 +5,8 @@ file:406dcde8f069ae17d0b0a26cf6fc06fd01bc86b4
 --test TGM.addBillingInfo.Add GST PAN details for: ${email}
 --test TGM.storeOnboarding.complete store onboarding for: ${email} #DEPENDS TGM.addBillingInfo.Add GST PAN details for: ${email}
 --test TGM.upgradePlan.upgrade user plan for: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
---test TGM.addBannerImage.add banner for: ${email}
---test TGM.addLogoImage.Add logo for user: ${email}
---test TGM.addProduct.add Product for: ${email}
---test TGM.updateStoreWelcomeSection.Update store's About us section for: ${email}
+--test TGM.addBannerImage.add banner for: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
+--test TGM.addLogoImage.Add logo for user: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
+--test TGM.addProduct.add Product for: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
+--test TGM.updateStoreWelcomeSection.Update store's About us section for: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
 
