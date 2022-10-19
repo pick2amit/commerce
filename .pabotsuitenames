@@ -1,5 +1,12 @@
-datasources:5c652e5caddd7c91710d11caf928fab251305052
-commandlineoptions:bab8a7d38e4aaa3511a7d52694002cbd0db0647d
+datasources:5135071d3e3cf512d35e76be8f70c79befdd4455
+commandlineoptions:94fcf69e8f4864ba45072caf82db8f2d2624f6df
 suitesfrom:no-suites-from-option
-file:6ca1bbc8412cca1f938b09e4760265c21b76c9f8
---test addProduct.add Product for: ${email}
+file:406dcde8f069ae17d0b0a26cf6fc06fd01bc86b4
+--test TGM.addBillingInfo.Add GST PAN details for: ${email}
+--test TGM.storeOnboarding.complete store onboarding for: ${email} #DEPENDS TGM.addBillingInfo.Add GST PAN details for: ${email}
+--test TGM.upgradePlan.upgrade user plan for: ${email} #DEPENDS TGM.storeOnboarding.complete store onboarding for: ${email}
+--test TGM.addBannerImage.add banner for: ${email}
+--test TGM.addLogoImage.Add logo for user: ${email}
+--test TGM.addProduct.add Product for: ${email}
+--test TGM.updateStoreWelcomeSection.Update store's About us section for: ${email}
+

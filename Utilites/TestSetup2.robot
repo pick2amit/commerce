@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  pabot.PabotLib
 Resource    ../POMs/Dashboard/LHSPage.robot
 Variables    ${env}.py
 
