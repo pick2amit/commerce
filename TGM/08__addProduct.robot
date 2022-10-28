@@ -8,10 +8,10 @@ Resource  ../POMs/Dashboard/Products/ProductListPage.robot
 Resource  ../POMs/Dashboard/Products/AddProductPage.robot
 Variables    ../CommonUtilities/readexcel.py
 
-Suite Setup    Open Instamojo
-Test Teardown    logout & open loginpage
+Test Setup    Open Instamojo
+#Test Teardown    logout & open loginpage
 Test Template  Add physical product
-Suite Teardown    Close Instamojo
+Test Teardown    Close Instamojo
 
 *** Test Cases ***
 add Product for: ${email}

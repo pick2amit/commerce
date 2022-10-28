@@ -30,11 +30,8 @@ commands:
           name: "Run Test Cases"
           no_output_timeout: 30m
           command: |
-            pabot --processes 2 --testlevelsplit --pabotlib -d Results -v env:prod -i << pipeline.parameters.test-tag >> TGM/
-#              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
-#              robot -d Results --output original.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i << pipeline.parameters.test-tag >> TGM/
-#              rebot -d Results --merge Results/original.xml Results/rerun.xml
-#              if exits("Results/rerun.xml") ; then rebot -d Results --merge Results/original.xml Results/rerun.xml
+            pabot --processes 2 --testlevelsplit --pabotlib -d Results -v env:prod -i billing_info TGM/
+
   prepare-result:
       steps:
         - store_artifacts:
@@ -42,7 +39,7 @@ commands:
             destination: artifact-file
 
 jobs:
-  run-test:
+  do-setup:
     circleci_ip_ranges: true
     docker:
       - image: cimg/python:3.10.5-browsers
@@ -50,10 +47,19 @@ jobs:
       - checkout
       - install-dependencies
       - setup-browser
+  run-test-1:
+    steps:
       - run-tests
+  prepare-final-result:
+    steps:
       - prepare-result
 
 workflows:
   prepare-and-run-test:
     jobs:
-      - run-test
+      - do-setup
+      - "Dependencies"
+      - run-test-1
+          requires: do-setup
+      - prepare-final-result
+          requires: run-test-1
