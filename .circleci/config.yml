@@ -1,6 +1,11 @@
 version: 2.1
 jobs:
   do-setup:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+  run-tests:
     parameters:
       sheet-name:
         description: this is a test data sheet name
@@ -9,11 +14,22 @@ jobs:
       - image: circleci/ruby:<< parameters.sheet-name >>
     steps:
       - checkout
+  prepare-result:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
 
 workflows:
   my-workflow:
     jobs:
-      - do-setup:
+      - do-setup
+      - run-tests:
           matrix:
             parameters:
               sheet-name: [latest, 2.4-node]
+          requires:
+            - do-setup
+      - prepare-result:
+          requires:
+            - run-tests
