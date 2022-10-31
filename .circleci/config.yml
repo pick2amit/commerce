@@ -39,7 +39,7 @@ commands:
             destination: artifact-file
 
 jobs:
-  do-setup:
+  doSetup:
     circleci_ip_ranges: true
     docker:
       - image: cimg/python:3.10.5-browsers
@@ -47,20 +47,20 @@ jobs:
       - checkout
       - install-dependencies
       - setup-browser
-  run-test-1:
+  runTest:
     steps:
       - run-tests
-  prepare-final-result:
+  prepareFinalResult:
     steps:
       - prepare-result
 
 workflows:
   prepare-and-run-test:
     jobs:
-      - do-setup
-      - run-test-1:
+      - doSetup
+      - runTest:
             requires:
-              - do-setup
-      - prepare-final-result:
+              - doSetup
+      - prepareFinalResult:
           requires:
-            - run-test-1
+            - runTest
