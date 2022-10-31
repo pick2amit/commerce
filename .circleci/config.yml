@@ -59,5 +59,8 @@ workflows:
     jobs:
       - do-setup
       - run-test-1:
+            requires:
+              - do-setup
+      - prepare-final-result:
           requires:
-            - do-setup
+            - run-test-1
