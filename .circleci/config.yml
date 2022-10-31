@@ -1,59 +1,18 @@
 version: 2.1
-parameters:
-  test-tag:
-    type: string
-    default: "all"
-orbs:
-  browser-tools: circleci/browser-tools@1.3.0
-  python: circleci/python@2.0.3
-
-commands:
-  install-dependencies:
-    steps:
-      - python/install-packages:
-          pip-dependency-file: requirement.txt
-          pkg-manager: pip
-  setup-browser:
-    steps:
-      - browser-tools/install-browser-tools:
-          chrome-version: 105.0.5195.102
-      - run:
-          name: Verify Browser installation
-          command: |
-            google-chrome --version
-            firefox --version
-            geckodriver --version
-            chromedriver --version
-
 jobs:
-  doSetup:
-    circleci_ip_ranges: true
+  job1:
     docker:
-      - image: cimg/python:3.10.5-browsers
+      - image: cimg/base:2022.10
     steps:
       - checkout
-      - install-dependencies
-      - setup-browser
-  runTest:
-    steps:
-      - run:
-          name: "Run Test Cases"
-          no_output_timeout: 30m
-          command: |
-            pabot --processes 2 --testlevelsplit --pabotlib -d Results -v env:prod -i billing_info TGM/
-  prepareFinalResult:
-    steps:
-      - store_artifacts:
-          path: Results
-          destination: artifact-file
+  job2:
+    docker:
+      - image: cimg/base:2022.10
+      steps:
+        - checkout
 
 workflows:
-  prepare-and-run-test:
+  my-workflow:
     jobs:
-      - doSetup
-      - runTest:
-            requires:
-              - doSetup
-      - prepareFinalResult:
-          requires:
-            - runTest
+      - job1
+      - job2
