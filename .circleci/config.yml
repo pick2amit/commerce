@@ -21,14 +21,6 @@ commands:
             chromedriver --version
 
 jobs:
-  do-setup:
-    docker:
-      - image: cimg/python:3.10.5-browsers
-    steps:
-      - checkout
-      - install-dependencies
-      - setup-browser
-
   run-tests:
     docker:
       - image: cimg/python:3.10.5-browsers
@@ -36,6 +28,7 @@ jobs:
       test-tag:
         type: string
     steps:
+      - checkout
       - install-dependencies
       - setup-browser
       - run:
@@ -49,10 +42,7 @@ jobs:
 workflows:
   my-workflow:
     jobs:
-      - do-setup
       - run-tests:
           matrix:
             parameters:
               test-tag: [billing_info, onboard, upgrade_plan, apply_theme]
-          requires:
-            - do-setup
