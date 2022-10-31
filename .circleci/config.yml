@@ -2,12 +2,12 @@ version: 2.1
 jobs:
   job1:
     docker:
-      - image: cimg/base:2022
+      - image: circleci/ruby:2.4-node
     steps:
       - checkout
   job2:
     docker:
-      - image: cimg/base:2022
+      - image: circleci/ruby:2.4-node
     steps:
         - checkout
 
@@ -15,4 +15,6 @@ workflows:
   my-workflow:
     jobs:
       - job1
-      - job2
+      - job2:
+          requires:
+            - job1
