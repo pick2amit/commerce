@@ -58,6 +58,6 @@ workflows:
   prepare-and-run-test:
     jobs:
       - do-setup
-      - run-test-1
+      - run-test-1:
           requires:
             - do-setup
