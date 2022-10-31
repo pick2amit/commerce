@@ -1,20 +1,26 @@
 version: 2.1
 jobs:
-  job1:
+  job:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
-  job2:
+  job1:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
         - checkout
+  job2:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
 
 workflows:
   my-workflow:
     jobs:
-      - job1
-      - job2:
+      - job
+      - job1:
           requires:
-            - job1
+            - job
+      - job2
