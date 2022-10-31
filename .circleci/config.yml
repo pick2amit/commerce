@@ -1,16 +1,21 @@
 version: 2.1
 jobs:
-  job:
+  do-setup:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
-  job1:
+  run-test-1:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
         - checkout
-  job2:
+  run-test-2:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+  prepare-result:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
@@ -19,10 +24,15 @@ jobs:
 workflows:
   my-workflow:
     jobs:
-      - job
-      - job1:
+      - do-setup
+      - run-setup-1:
           requires:
-            - job
-      - job2:
+            - do-setup
+      - run-test-2:
           requires:
-            - job
+            - do-setup
+      prepare-result:
+        requires:
+          - do-setup
+          - run-test-1
+          - run-test-2
