@@ -25,14 +25,14 @@ workflows:
   my-workflow:
     jobs:
       - do-setup
-      - run-setup-1:
+      - run-test-1:
           requires:
             - do-setup
       - run-test-2:
           requires:
             - do-setup
-      prepare-result:
-        requires:
-          - do-setup
-          - run-test-1
-          - run-test-2
+      - prepare-result:
+          requires:
+            - do-setup
+            - run-test-1
+            - run-test-2
