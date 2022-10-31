@@ -24,19 +24,6 @@ commands:
             firefox --version
             geckodriver --version
             chromedriver --version
-  run-tests:
-    steps:
-      - run:
-          name: "Run Test Cases"
-          no_output_timeout: 30m
-          command: |
-            pabot --processes 2 --testlevelsplit --pabotlib -d Results -v env:prod -i billing_info TGM/
-
-  prepare-result:
-      steps:
-        - store_artifacts:
-            path: Results
-            destination: artifact-file
 
 jobs:
   doSetup:
@@ -49,10 +36,16 @@ jobs:
       - setup-browser
   runTest:
     steps:
-      - run-tests
+      - run:
+          name: "Run Test Cases"
+          no_output_timeout: 30m
+          command: |
+            pabot --processes 2 --testlevelsplit --pabotlib -d Results -v env:prod -i billing_info TGM/
   prepareFinalResult:
     steps:
-      - prepare-result
+      - store_artifacts:
+          path: Results
+          destination: artifact-file
 
 workflows:
   prepare-and-run-test:
