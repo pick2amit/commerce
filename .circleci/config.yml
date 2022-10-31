@@ -36,6 +36,8 @@ jobs:
       test-tag:
         type: string
     steps:
+      - install-dependencies
+      - setup-browser
       - run:
           name: "Run the tests"
           no_output_timeout: 30m
