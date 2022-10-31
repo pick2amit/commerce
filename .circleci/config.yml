@@ -16,4 +16,4 @@ workflows:
       - do-setup:
           matrix:
             parameters:
-              sheet-name: [latest, stable]
+              sheet-name: [latest, 2.4-node]
