@@ -33,6 +33,5 @@ workflows:
             - do-setup
       - prepare-result:
           requires:
-            - do-setup
             - run-test-1
             - run-test-2
