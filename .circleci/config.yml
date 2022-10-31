@@ -58,8 +58,6 @@ workflows:
   prepare-and-run-test:
     jobs:
       - do-setup
-      - "Dependencies"
       - run-test-1
-          requires: do-setup
-      - prepare-final-result
-          requires: run-test-1
+          requires:
+            - do-setup
