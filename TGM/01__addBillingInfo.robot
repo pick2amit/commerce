@@ -1,6 +1,6 @@
 *** Settings ***
 Library  pabot.PabotLib
-Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=PD1-10
+Library  DataDriver    ../DataDriven/TGM-akt.xlsx   sheet_name=${current_sheet}
 Resource    ../Utilites/TestSetup2.robot
 Resource    ../POMs/Dashboard/LoginPage.robot
 Resource    ../POMs/Dashboard/Onboarding/compliancePage.robot

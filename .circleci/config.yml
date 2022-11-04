@@ -26,7 +26,7 @@ jobs:
     docker:
       - image: cimg/python:3.10.5-browsers
     parameters:
-      test-tag:
+      sheet-name:
         type: string
     steps:
       - checkout
@@ -35,9 +35,9 @@ jobs:
       - run:
           name: "Run the tests"
           no_output_timeout: 30m
-          command: robot -d Results/<< parameters.test-tag >> -v env:prod -i << parameters.test-tag >> TGM/
+          command: robot -d Results -v env:prod -v current_sheet:<< parameters.sheet-name >> TGM/
       - store_artifacts:
-          path: Results/<< parameters.test-tag >>
+          path: Results
           destination: artifact-file
 
 workflows:
@@ -46,4 +46,4 @@ workflows:
       - run-tests:
           matrix:
             parameters:
-              test-tag: [billing_info, onboard, upgrade_plan, apply_theme]
+              sheet-name: [PD1-10, PD11-20, PD21-25]
