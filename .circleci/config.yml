@@ -38,7 +38,6 @@ jobs:
           command: robot -d Results -v env:prod -v current_sheet:<< parameters.sheet-name >> TGM/
       - store_test_results:
           path: Results
-          destination: artifact-file
 
 workflows:
   my-workflow:
