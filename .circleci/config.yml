@@ -36,8 +36,8 @@ jobs:
           name: "Run the tests"
           no_output_timeout: 30m
           command: |
-          robot -d Results --output original.xml -v env:prod -v current_sheet:<< parameters.sheet-name >> -i apply_theme TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i apply_theme TGM/
-          rebot -d Results --merge Results/original.xml Results/rerun.xml
+            robot -d Results --output original.xml -v env:prod -v current_sheet:<< parameters.sheet-name >> -i apply_theme TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -i apply_theme TGM/
+            rebot -d Results --merge Results/original.xml Results/rerun.xml
       - store_artifacts:
           path: Results
           destination: artifact-file
