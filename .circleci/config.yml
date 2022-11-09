@@ -36,8 +36,9 @@ jobs:
           name: "Run the tests"
           no_output_timeout: 30m
           command: robot -d Results -v env:prod -v current_sheet:<< parameters.sheet-name >> TGM/
-      - store_test_results:
+      - store_artifacts:
           path: Results
+          destination: artifact-file
 
 workflows:
   my-workflow:
@@ -45,4 +46,4 @@ workflows:
       - run-tests:
           matrix:
             parameters:
-              sheet-name: [PD11-20, PD21-25]
+              sheet-name: [PD1-10]
