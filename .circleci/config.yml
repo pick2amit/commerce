@@ -37,10 +37,6 @@ jobs:
           no_output_timeout: 30m
           command: |
             robot -d Results --output original.xml -v env:prod -v current_sheet:<< parameters.sheet-name >> -i apply_theme TGM/ || robot -d Results --prerunmodifier DataDriver.rerunfailed:Results/original.xml --output rerun.xml -v env:prod -v current_sheet:<< parameters.sheet-name >> -i apply_theme TGM/
-            command: rebot -d Results --merge Results/original.xml Results/rerun.xml
-            rules:
-              - exists:
-                - Results/rerun.xml
       - store_artifacts:
           path: Results
           destination: artifact-file
