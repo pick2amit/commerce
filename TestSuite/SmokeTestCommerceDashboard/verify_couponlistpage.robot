@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  delete coupon
+Documentation  couponpage
 Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
