@@ -9,7 +9,7 @@ ${Discounts}  xpath://span[normalize-space()='Discounts']
 ${Addcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/button
 ${deletecoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div[3]
 ${deletetoast}     xpath=//body/div[3]
-${couponmenu}     xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div/div
+${couponmenu}     xpath=//*[@id="__next"]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/div/div/table/tbody/tr[1]/td[5]/div/div[1]/div/i
 ${editcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div
 ${couponnameinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div/div/ul/li/div[2]/div/input
 ${promocodde}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[6]/div/ul/li/div[2]/div/input
