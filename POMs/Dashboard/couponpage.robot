@@ -7,7 +7,7 @@ Library  String
 ${couponpage}    xpath://span[normalize-space()='Coupons']
 ${Discounts}  xpath://span[normalize-space()='Discounts']
 ${Addcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/button
-${deletecoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div[3]
+${deletecoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table
 ${deletetoast}     xpath=//body/div[3]
 ${couponmenu}     xpath=//*[@id="__next"]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/div/div/table/tbody/tr[1]/td[5]/div/div[1]/div/i
 ${editcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div
@@ -15,7 +15,7 @@ ${couponnameinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/fo
 ${promocodde}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[6]/div/ul/li/div[2]/div/input
 ${dateinput}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[4]/div/input
 ${nextmonth}    xpath=//div[6]/div[2]/div[1]/table/thead/tr[1]/th[3]
-${selectdate}    xpath=//body/div[6]/div[2]/div[1]/table/tbody/tr[4]/td[6]
+${selectdate}    xpath=//body/div[7]/div[2]/div[1]/table/tbody/tr[2]/td[7]
 ${applydate}     xpath=//body/div[6]/div[4]/button[2]
 ${eligiblleamount}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[5]/div/ul/li/div[2]/div/input
 ${promotype}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/form/div[7]/div/ul/li/div[2]/select
