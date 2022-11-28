@@ -19,6 +19,14 @@ Add product category
     #CategoryListPage.Select the featured toggle
     CategoryListPage.Save category
     CategoryListPage.Verify add category success
+
+Edit category
+    [Tags]    Smoked
+    LHSPage.Open category list page
+    CategoryListPage.Verify category list
+    CategoryListPage.Edit first category
+    CategoryListPage.Verify update category
+
 Delete category
     [Tags]    Smoke
     CategoryListPage.Select 1st category from the list
