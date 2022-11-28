@@ -21,7 +21,7 @@ Add product category
     CategoryListPage.Verify add category success
 
 Edit category
-    [Tags]    Smoked
+    [Tags]    Smoke
     LHSPage.Open category list page
     CategoryListPage.Verify category list
     CategoryListPage.Edit first category
