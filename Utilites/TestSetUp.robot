@@ -7,8 +7,8 @@ Variables    testData.py
 Open Instamojo
     [Arguments]    ${browser}
     Open Browser  ${url}  ${browser}
-    #Maximize Browser Window
-    Set Window Size    1366    711
+    Maximize Browser Window
+    #Set Window Size    1366    711
     Set Selenium Implicit Wait  20s
 
 Close Instamojo
