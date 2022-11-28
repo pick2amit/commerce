@@ -12,9 +12,6 @@ Suite Teardown    Close Instamojo
 *** Test Cases ***
 Verify the Discount links page
     [Tags]    Smoke
-    LoginPage.Verify the login page is displayed
-    LoginPage.Login to instamojo   ${username}  ${password}
-    LoginPage.Verify the success login
     LHSPage.Open discount link page
     DiscountLinks.Verify discount link page
 
