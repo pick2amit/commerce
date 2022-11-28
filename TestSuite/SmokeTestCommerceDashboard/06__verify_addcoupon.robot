@@ -5,7 +5,7 @@ Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
 
 Test Setup    back to homepage
-Suite Teardown    Close Instamojo
+
 
 *** Test Cases ***
 Verify Adding Coupon

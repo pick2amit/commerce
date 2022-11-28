@@ -79,3 +79,8 @@ Open category list page
     scroll element into view    ${Products}
     click element    ${Products}
     click element    ${Categories}
+
+Open discount link page
+    scroll element into view    ${Discounts}
+    click element    ${Discounts}
+    click element    ${DiscountLinks}
