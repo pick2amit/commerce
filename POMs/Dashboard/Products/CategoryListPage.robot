@@ -58,8 +58,9 @@ Confirm category delete
     click element    ${ConfirmCategoryDelete}
 
 Edit first category
+    sleep    2s
     click element    ${Edit1stCategory}
-    sleep    3s
+    sleep    2s
     #Press Keys    ${CategoryName}    COMMAND+a+COMMAND+x
     Press Keys    ${CategoryName}    CONTROL+a+CONTROL+x
     ${timestamp}=    get time

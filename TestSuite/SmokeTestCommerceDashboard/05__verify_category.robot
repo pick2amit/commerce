@@ -22,8 +22,6 @@ Add product category
 
 Edit category
     [Tags]    Smoke
-    LHSPage.Open category list page
-    CategoryListPage.Verify category list
     CategoryListPage.Edit first category
     CategoryListPage.Verify update category
 
