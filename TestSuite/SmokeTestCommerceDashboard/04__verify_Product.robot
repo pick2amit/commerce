@@ -41,15 +41,15 @@ Add a physical product
     AddProductPage.Enter Webhook Url    ${product_webhook_url}
     AddProductPage.Save Product
     productlistpage.verify add product success
-    ${final_count}    ProductListPage.Get product count
+    ${final_count}=    ProductListPage.Get product count
     should be equal as integers    ${intial_count}    ${final_count}
 
 Update product title
     [Tags]    Smoke
-    sleep    3s
     ProductListPage.Open 1st product
     AddProductPage.Enter product title    ${updated-title}
     AddProductPage.Save product
+    ProductListPage.Verify product list
     ${ActualTitle}=    ProductListPage.Get 1st product title
     should be equal as strings  ${ActualTitle}    ${updated-title}
 

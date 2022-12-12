@@ -25,6 +25,7 @@ Open 1st product
     click element    ${Product-1-link}
 
 Get 1st product title
+    wait until element is visible  ${Product-1-title}  timeout=15s
     ${title}=    get text    ${Product-1-title}
     [Return]    ${title}
 Select 1st product
@@ -37,7 +38,7 @@ Delete all selected products
 
 Get product count
     [Documentation]    This will return the Total Products
-    #sleep    2s
+    sleep    2s
     ${count}  Get Text    ${Productcount}
     ${count} =    Set Variable  ${count.split("of ")}
     ${count} =    Set Variable  ${count[-1]}
