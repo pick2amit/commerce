@@ -35,6 +35,7 @@ commands:
 
 jobs:
   run-test:
+    circleci_ip_ranges: true
     docker:
       - image: cimg/python:3.10.5-browsers
     steps:

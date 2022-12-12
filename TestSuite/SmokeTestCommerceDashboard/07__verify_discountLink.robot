@@ -5,9 +5,10 @@ Resource  ../../POMs/Dashboard/HomePage.robot
 Resource  ../../POMs/Dashboard/LHSPage.robot
 Resource  ../../POMs/Dashboard/Discounts/DiscountLinks.robot
 
-Suite Setup  back to homepage
+Suite Setup    Run Keywords
+...    Open Instamojo    AND
+...    Login to dashboard
 Suite Teardown    Close Instamojo
-
 
 *** Test Cases ***
 Verify the Discount links page

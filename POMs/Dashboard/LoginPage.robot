@@ -4,7 +4,7 @@ Resource  ../../POMs/Dashboard/LoginPage.robot
 
 *** Variables ***
 # These are the WebElements
-#${instamojoLogo}    xpath://a[contains(@class,'logo block small-only-push-half--bottom')]
+${instamojoLogo}    xpath://a[@class='logo block small-only-push-half--bottom ']
 
 ${LoginUNTextBox}  xpath://input[@id='id_login_username']
 ${LoginPWTextBox}  xpath://input[@id='id_login_password']
@@ -23,9 +23,9 @@ ${DashboardHeading}  //h1[normalize-space()='Dashboard']
 
 *** Keywords ***
 Open the homepage
-    #wait until element is enabled    ${instamojoLogo}
+    wait until element is enabled    ${instamojoLogo}    timeout=30s
     click element    ${InstaMojoLogo}
-# These are the Methods that can be used for login
+
 Insert login username
     [Arguments]  ${username}
     Input Text  ${LoginUNTextBox}  ${username}  clear=true

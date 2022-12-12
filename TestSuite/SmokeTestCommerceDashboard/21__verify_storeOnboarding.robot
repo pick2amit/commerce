@@ -14,9 +14,8 @@ Resource  ../../POMs/Dashboard/Onboarding/OnboardStep04.robot
 Resource  ../../POMs/Dashboard/Onboarding/OnboardStep05.robot
 Resource  ../../POMs/Dashboard/Onboarding/OnboardFinish.robot
 
-Suite Setup  Open Instamojo    headlesschrome
-Test Setup    back to homepage
-Test Teardown  Close Instamojo
+Suite Setup    Open Instamojo
+Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Store onboarding signup

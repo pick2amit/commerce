@@ -1,15 +1,19 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  ../POMs/Dashboard/LoginPage.robot
 Variables    ${env}.py
 Variables    testData.py
 
 *** Keywords ***
 Open Instamojo
-    [Arguments]    ${browser}
     Open Browser  ${url}  ${browser}
     Maximize Browser Window
-    #Set Window Size    1366    711
     Set Selenium Implicit Wait  20s
+
+Login to dashboard
+    LoginPage.Verify The Login Page Is Displayed
+    LoginPage.Login To Instamojo  ${username}  ${password}
+    LoginPage.Verify The Success Login
 
 Close Instamojo
     sleep    2s

@@ -4,8 +4,10 @@ Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
 
-Test Setup    back to homepage
-
+Suite Setup    Run Keywords
+...    Open Instamojo    AND
+...    Login to dashboard
+Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Verify Adding Coupon
@@ -35,4 +37,3 @@ Verify Adding Coupon
            couponpage.Enable coupon options
 #save coupon
           couponpage.Save the coupon
-

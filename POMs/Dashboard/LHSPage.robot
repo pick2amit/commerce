@@ -84,3 +84,13 @@ Open discount link page
     scroll element into view    ${Discounts}
     click element    ${Discounts}
     click element    ${DiscountLinks}
+
+Open order list page
+    scroll element into view    ${Orders}
+    click element    ${Orders}
+    click element    ${AllOrders}
+
+Open abandoned cart list page
+    scroll element into view    ${Orders}
+    click element    ${Orders}
+    click element    ${AbandonedCarts}
