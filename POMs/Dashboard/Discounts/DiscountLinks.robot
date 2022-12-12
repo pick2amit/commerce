@@ -24,7 +24,9 @@ Verify delete link
     page should contain element  ${ToastMsg}
 
 Get discount code text
+    sleep    2s
     ${couponCode}=    get text    xpath://tr[1]/td[1]
+    log    Code from the List: ${couponCode}
     RETURN    ${couponCode}
 
 Delete discount link
@@ -47,9 +49,10 @@ Add discount link
     input text    ${QuantityIPBox}    ${Frequency}
     input text    xpath://li/div/div/div/div/div/div/input    ${Product}
     #input text    xpath://li/div/div/div/div[normalize-space()='Select...']    ${Product}
-    sleep    1s
+    sleep    2s
     click element at coordinates    xpath://li/div/div/div/div/div/div/input    0    50
     # 28 to 64 1st element
     click element    ${GenerateLinkBtn}
     wait until element is not visible    ${ToastMsg}    timeout=15s
+    log    Added Discount Code: ${DiscountCodeName}
     RETURN    ${DiscountCodeName}
