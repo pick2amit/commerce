@@ -6,6 +6,7 @@ Resource   ../../Utilites/TestSetUp.robot
 
 Suite Setup    Open Instamojo
 Suite Teardown    Close Instamojo
+Test Template    Invalid login
 
 *** Test Cases ***
     Verify the invalidLogin testcases    {username}    {password}    {error_message}

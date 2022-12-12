@@ -22,6 +22,7 @@ Verify discount link page
 Verify delete link
     wait until element is visible    ${ToastMsg}    timeout=15s
     page should contain element  ${ToastMsg}
+
 Get discount code text
     ${couponCode}=    get text    xpath://tr[1]/td[1]
     RETURN    ${couponCode}
@@ -50,6 +51,5 @@ Add discount link
     click element at coordinates    xpath://li/div/div/div/div/div/div/input    0    50
     # 28 to 64 1st element
     click element    ${GenerateLinkBtn}
-    sleep    2s
     wait until element is not visible    ${ToastMsg}    timeout=15s
     RETURN    ${DiscountCodeName}
