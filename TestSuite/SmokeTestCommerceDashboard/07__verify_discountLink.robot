@@ -12,13 +12,13 @@ Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Verify the Discount links page
-    [Tags]    Smoked
+    [Tags]    Smoke
     LHSPage.Open discount link page
     DiscountLinks.Verify discount link page
 
 Verify add discount link
-    [Tags]    Smoked
-    ${DiscountCode}=    DiscountLinks.Add discount link    DEC22    2    1    This is a
+    [Tags]    Smoke
+    ${DiscountCode}=    DiscountLinks.Add discount link    DEC22    2    1    this is colorful
     ${DiscountCodeFromList}=    DiscountLinks.Get discount code text
     should be equal as strings  ${DiscountCode}  ${DiscountCodeFromList}
 

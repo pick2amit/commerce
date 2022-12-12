@@ -67,6 +67,6 @@ Verify the error message for invalid login
     page should contain    ${error_message}
 
 Verify the success login
-    wait until element is visible   ${ProfileIcon}    timeout=15s
+    wait until element is visible   ${ProfileIcon}    timeout=30s
     Page Should Contain Element    ${DashboardHeading}
     Page Should Contain Element    ${ProfileIcon}

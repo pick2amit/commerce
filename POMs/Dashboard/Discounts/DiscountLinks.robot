@@ -32,11 +32,10 @@ Get discount code text
 Delete discount link
     [Arguments]    ${index}
     ${FirstLinkMenu}=    set variable    ${LinkMenu}\[${index}]
-    log    LinkMenu: ${LinkMenu}
-    log    1stLinkMenu: ${FirstLinkMenu}
-    wait until element is visible    ${FirstLinkMenu}    timeout=20s
+    wait until element is not visible  ${ToastMsg}  timeout=20s
+    wait until element is enabled    ${FirstLinkMenu}    timeout=20s
     click element  ${FirstLinkMenu}
-    sleep    1s
+    wait until element is enabled  ${DeleteLink}   timeout=10s
     click element    ${DeleteLink}
     handle alert    action=accept   timeout=10s
 
@@ -50,7 +49,7 @@ Add discount link
     input text    xpath://li/div/div/div/div/div/div/input    ${Product}
     #input text    xpath://li/div/div/div/div[normalize-space()='Select...']    ${Product}
     sleep    2s
-    click element at coordinates    xpath://li/div/div/div/div/div/div/input    0    50
+    click element at coordinates    xpath://li/div/div/div/div/div/div/input    0    45
     # 28 to 64 1st element
     click element    ${GenerateLinkBtn}
     wait until element is not visible    ${ToastMsg}    timeout=15s
