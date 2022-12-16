@@ -5,9 +5,10 @@ Resource  ../../POMs/Dashboard/HomePage.robot
 Resource  ../../POMs/Dashboard/LHSPage.robot
 Resource  ../../POMs/Dashboard/Discounts/DiscountLinks.robot
 
-Suite Setup  back to homepage
+Suite Setup    Run Keywords
+...    Open Instamojo    AND
+...    Login to dashboard
 Suite Teardown    Close Instamojo
-
 
 *** Test Cases ***
 Verify the Discount links page
@@ -17,7 +18,7 @@ Verify the Discount links page
 
 Verify add discount link
     [Tags]    Smoke
-    ${DiscountCode}=    DiscountLinks.Add discount link    NOV22    2    1    This is a
+    ${DiscountCode}=    DiscountLinks.Add discount link    DEC22    2    1    this is colorful
     ${DiscountCodeFromList}=    DiscountLinks.Get discount code text
     should be equal as strings  ${DiscountCode}  ${DiscountCodeFromList}
 

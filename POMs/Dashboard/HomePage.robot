@@ -10,9 +10,10 @@ ${pricingPageLink}  xpath://ul[@id='menu-uber-pri-menu']//a[normalize-space()='P
 
 *** Keywords ***
 Open login page
+    wait until element is enabled    ${loginBtn}    timeout=30s
     click element    ${loginBtn}
 Verify the homepage
-    wait until page contains element    ${mojoStarLogo}
+    wait until page contains element    ${mojoStarLogo}    timeout=30s
     page should contain element    ${imbLogo}
     page should contain element    ${mojoStarLogo}
     page should contain element    ${loginBtn}

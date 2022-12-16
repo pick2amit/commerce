@@ -3,7 +3,9 @@ Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/HomePage.robot
 
-Test Setup    back to homepage
+Suite Setup  Open Instamojo
+Suite Teardown    Close Instamojo
+
 *** Test Cases ***
 Verify the validLogin
     [Tags]    Smoke

@@ -4,7 +4,10 @@ Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/LHSPage.robot
 Resource  ../../POMs/Dashboard/Products/ProductListPage.robot
 
-#Test Setup    back to homepage
+Suite Setup    Run Keywords
+...    Open Instamojo    AND
+...    Login to dashboard
+Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 verify product list page
