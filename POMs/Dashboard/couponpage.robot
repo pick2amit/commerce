@@ -7,7 +7,7 @@ Library  String
 ${couponpage}    xpath://span[normalize-space()='Coupons']
 ${Discounts}  xpath://span[normalize-space()='Discounts']
 ${Addcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div/button
-${deletecoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table
+${deletecoupon}  xpath=//body/div[1]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/div/div/table/tbody/tr[1]/td[5]/div/div[2]/div/div[3]
 ${deletetoast}     xpath=//body/div[3]
 ${couponmenu}     xpath=//*[@id="__next"]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/div/div/table/tbody/tr[1]/td[5]/div/div[1]/div/i
 ${editcoupon}    xpath=//div[@id='__next']/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div/div/table/tbody/tr/td[5]/div/div[2]/div/div
@@ -107,7 +107,7 @@ Delete Coupon
          handle alert    accept
 
 verify coupon is deleted
-        page should contain element    ${deletetoast}
+    page should contain element    ${deletetoast}
 
 verify if search option is seen
         page should contain element    ${searchbar}
