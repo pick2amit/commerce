@@ -1,11 +1,14 @@
 *** Settings ***
-Documentation  couponpage
+
+Documentation    couponlistpage
 Resource   ../../Utilites/TestSetUp.robot
 Resource  ../../POMs/Dashboard/LoginPage.robot
 Resource  ../../POMs/Dashboard/couponpage.robot
 
-Test Setup  Open Instamojo    ${browser}
-
+Suite Setup    Run Keywords
+...    Open Instamojo    AND
+...    Login to dashboard
+Suite Teardown    Close Instamojo
 
 *** Test Cases ***
 Verify coupon list page
