@@ -99,6 +99,7 @@ Save the coupon
 
 Delete Coupon
          click element    ${couponmenu}
+         wait until element is visible    ${deletecoupon}
          click element    ${deletecoupon}
          handle alert    accept
 
