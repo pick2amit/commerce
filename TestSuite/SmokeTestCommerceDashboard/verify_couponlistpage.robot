@@ -14,9 +14,6 @@ Suite Teardown    Close Instamojo
 Verify coupon list page
     [Tags]    Smoke
 
-#LoginPage.Verify The Login Page Is Displayed
-    LoginPage.Login To Instamojo  ${username}  ${password}
-    LoginPage.Verify The Success Login
 #Navigate to coupon page
      couponpage.Verify navigating tto discounts
      couponpage.Veriy navigating to coupon page
