@@ -13,8 +13,6 @@ commands:
   setup-browser:
     steps:
       - browser-tools/install-browser-tools
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       - run:
           name: Verify Browser installation
           command: |
