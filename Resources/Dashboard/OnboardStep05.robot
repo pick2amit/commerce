@@ -4,7 +4,7 @@ Library  SeleniumLibrary    timeout=20s
 *** Variables ***
 # Select theme Locators
 ${SetStoreUrlHeading}  xpath://h2[normalize-space()='Set Store Link']
-#//h2[contains(text(),'Set Store URL')]
+#//h2[contains(text(),'Set StoreFront URL')]
 ${StoreUrlInputBox}  xpath://input[@placeholder='E.g. Shah Shoes & Clothes']
 ${Suggestion1}  xpath://li[1]//div[1]//label[1]
 ${Suggestion2}  xpath://li[2]//div[1]//label[1]

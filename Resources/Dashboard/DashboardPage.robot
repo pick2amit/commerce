@@ -7,7 +7,7 @@ ${createNewButton}  xpath://button[normalize-space()='Create New']
 ${DashboardButton}  xpath://span[normalize-space()='Dashboard']
 ${dashboardHeading} xpath://h1[normalize-space()='Dashboard']
 ${profileIcon}    xpath://div[@class='dropdown-control']//img
-#Store Signup
+#StoreFront Signup
 ${AddProductButton}  xpath://div[contains(text(),'Add Product')]
 ${EnablePaymentMessage}  xpath://span[contains(text(),'Payment collection is not enabled on your account.')]
 

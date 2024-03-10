@@ -37,12 +37,12 @@ Store onboarding signup
 #    OTPPAGE.Enter the OTP
 #    wait until keyword succeeds  20 sec  5 sec   Click on the verify otp button
 #
-#    #Select the Store intents
+#    #Select the StoreFront intents
 #    IntentPage.Verify the intent selection page is displayed
 #    IntentPage.select store intent
 #
-#    # Onboard STEP-01 Enter the Store name
-#    OnboardStep01.Enter Store Name
+#    # Onboard STEP-01 Enter the StoreFront name
+#    OnboardStep01.Enter StoreFront Name
 #    OnboardStep01.Click On Next Button Of Step01
 #
 #    # Onboard STEP-02 Enter social media details
@@ -63,10 +63,10 @@ Store onboarding signup
 #    OnboardStep04.Select Category
 #    OnboardStep04.CLick on Next Button of Step04
 #
-#    #Onboard STEP-05 Select the Store URL
+#    #Onboard STEP-05 Select the StoreFront URL
 #    OnboardStep05.Verify The Onboard Step05 Page Is Displayed
 #    OnboardStep05.Select 1st Url Suggestion
-#    OnboardStep05.CLick On The Create Store
+#    OnboardStep05.CLick On The Create StoreFront
 #
 #    # verify the Final page
 #    OnboardFinish.Verify The Onboard Finish Page Is Displayed

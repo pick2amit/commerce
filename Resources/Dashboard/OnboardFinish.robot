@@ -2,7 +2,7 @@
 Library  SeleniumLibrary    timeout=20s
 
 *** Variables ***
-# Store setup finish page Locators
+# StoreFront setup finish page Locators
 #${StoreLogo}    xpath://img[@class='store-img']
 #${YourOnlineStoreReadyHeading}  xpath://h3[contains(text(),'Your online store is ready!')]
 #${SetupPaymentLink}  xpath://a[contains(text(),'Set up Payments')]

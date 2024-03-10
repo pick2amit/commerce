@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary    timeout=20s
+Library  SeleniumLibrary
 
 *** Variables ***
 ${LoginTextField}  xpath://input[@id='login_id_email']
@@ -9,7 +9,7 @@ ${SuccessLogin}  xpath://a[contains(text(),'Hi Visha')]
 
 *** Keywords ***
 Enter username
-  Input text  ${LoginTextField}  vishal.patil450@instamojo.com
+  Input text  ${LoginTextField}  amit.kt@instamojo.com
 
 Enter password
   Input password  ${PasswordTextFeild}   12345678

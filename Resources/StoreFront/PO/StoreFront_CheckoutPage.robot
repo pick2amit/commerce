@@ -1,8 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
 
-
 *** Variables ***
+${MAKE_PAYMENT_BTN}  xpath://button[@class='theme-btn theme-btn-solid proceed-payment-btn btn-block hidden-xs ng-scope']
+
+
+${ContinueAsGuest}  xpath://button[@id='next1']
 
 ${FirstNameTB}  xpath://input[@id='firstname']
 ${LastNameTB}  xpath://input[@id='lastname']
@@ -25,8 +28,9 @@ ${Country} =  105
 ${State}  =  16
 ${Pin/ZipCode} =  591254
 
-
 *** Keywords ***
+Click on make payment button
+   Click Element  ${MAKE_PAYMENT_BTN}
 
 Enter the delivery details
     [Arguments]  ${FirstName}  ${LastName}  ${Email}  ${MobileNo}  ${City}  ${Address}  ${Country}  ${State}  ${Pin/ZipCode}
