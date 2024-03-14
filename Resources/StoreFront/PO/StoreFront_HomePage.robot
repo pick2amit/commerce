@@ -6,7 +6,8 @@ Library    SeleniumLibrary
 ${STORE_LOGO_LINK}      xpath://div[@class="navbarLayout"]/div/div/a/img
 ${BANNER}               xpath://*[@id="48"]/div/div/div/div[1]/div/div/ul/li[2]/div/div/div/div
 ${PS_HEADING}           xpath://h2[contains(text(), "Latest Products")]
-${FIRST_PRODUCT_LINK}   (//*[contains(@id,"productList-")]//a/div)[1]
+${FIRST_PRODUCT_LINK}   (//*[contains(@id,"productList-")]//a/div)[2]
+                        #//*[@id="productList-11711943"]/div[1]/div/div/div[2]/div[1]/a
 
 ${HOMEPAGE_TITLE}       Car Wiring Diagram Electrical Control unit Cluster Meter Pdf File
 

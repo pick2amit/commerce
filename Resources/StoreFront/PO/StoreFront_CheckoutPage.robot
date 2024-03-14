@@ -2,62 +2,65 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${MAKE_PAYMENT_BTN}  xpath://button[@class='theme-btn theme-btn-solid proceed-payment-btn btn-block hidden-xs ng-scope']
+${CUSTOMER_INFO_HEADING}         xpath://h1[normalize-space()='Customer Information']
+${FIRST_NAME_INPUT}              xpath://input[@id='firstname']
+${LAST_NAME_INPUT}               xpath://input[@id='lastname']
+${EMAIL_INPUT}                   xpath://input[@id='email']
+${MOBILE_NO_INPUT}               xpath://input[@placeholder='Mobile No.']
+${WHATSAPP_CHECKBOX}             xpath://*[@id="send_whatsapp_communication"]
+${COUPON_INPUT}                  xpath://input[@placeholder='Enter Coupon/Discount Code']
+${COUPON_APPLY_BUTTON}           xpath://button[normalize-space()='Apply']
+${ADD_DELIVERY_INFO_BUTTON}      xpath://button[normalize-space()='Add Delivery Info']
 
+${SHIPPING_ADDRESS_HEADING}      xpath://h1[normalize-space()='Shipping Address']
+${HOUSE_NO_INPUT}                xpath://input[@id='address']
+${CITY_INPUT}                    xpath://input[@id='city']
+${PINCODE_INPUT}                 xpath://input[@id='code']
+${STATE_LIST}                    xpath://select[@id='state']
+${BILLING_ADDRESS_CHECKBOX}      xpath://input[@id='same_as_shipping_address']
+${REVIEW_ORDER_BUTTON}           xpath://button[@id='submit']
 
-${ContinueAsGuest}  xpath://button[@id='next1']
+${REVIEW_ORDER_HEADING}          xpath://h1[normalize-space()='Review Your Order']
+${SELECT_PAYMENT_BUTTON}         xpath://button[normalize-space()='Select Payment']
+${SELECT_PAYMENT_HEADING}        xpath://h1[normalize-space()='Select Payment Options']
+${PAYMENT_RADIO_BUTTON_GROUP}    payment-option
+${ONLINE_PAY_BUTTON_VALUE}       Instamojo
+${COD_BUTTON_VALUE}              xpath://*[@value="Cash-On-Delivery"]
+${PLACE_ORDER_BUTTON}            xpath://button[normalize-space()='Place Order']
 
-${FirstNameTB}  xpath://input[@id='firstname']
-${LastNameTB}  xpath://input[@id='lastname']
-${EmailTB}  xpath://input[@id='email-address']
-${MobileNoTB}  xpath://input[@id='contact']
-${CityTB}  xpath://input[@id='city']
-${AddressTA}  xpath://textarea[@id='address']
-${CountryDD}  xpath://select[@id='country']
-${StateDD}  xpath://select[@id='state']
-${Pin/ZipCodeTB}  xpath://input[@id='code']
-${ContinueToBag}  xpath://div[1]//a[3]
+${IFRAME_CLOSE_BUTTON}     xpath://*[@id="root"]/div[3]/div[1]/div[1]/div/div/button
 
-${FirstName} =  Vishal
-${LastName}  =  Patil
-${Email}    =  testac@gmail.com
-${MobileNo} =  9988776666
-${City}  =  belguam
-${Address} =  testtesttest
-${Country} =  105
-${State}  =  16
-${Pin/ZipCode} =  591254
 
 *** Keywords ***
-Click on make payment button
-   Click Element  ${MAKE_PAYMENT_BTN}
+Fill the customer info
+    wait until page contains element    ${CUSTOMER_INFO_HEADING}
+    input text                          ${FIRST_NAME_INPUT}     amit
+    input text                          ${LAST_NAME_INPUT}      tewari
+    input text                          ${EMAIL_INPUT}          amit@test.com
+    input text                          ${MOBILE_NO_INPUT}      9999888888
+    select checkbox                     ${WHATSAPP_CHECKBOX}
+    click element                       ${ADD_DELIVERY_INFO_BUTTON}
+    sleep                               2s
 
-Enter the delivery details
-    [Arguments]  ${FirstName}  ${LastName}  ${Email}  ${MobileNo}  ${City}  ${Address}  ${Country}  ${State}  ${Pin/ZipCode}
-    Input Text  ${FirstNameTB}  ${FirstName}
-    sleep  1s
-    Input Text  ${LastNameTB}  ${LastName}
-    sleep  1s
-    Input Text  ${EmailTB}  ${Email}
-    sleep  1s
-    Input Text  ${MobileNoTB}  ${MobileNo}
-    sleep  1s
-    Input Text  ${CityTB}  ${City}
-    sleep  1s
-    Input Text  ${AddressTA}  ${Address}
-    sleep  1s
-    Select From List By Value  ${CountryDD}  ${Country}
-    sleep  1s
-    Select From List By Value  ${StateDD}  ${State}
-    sleep  1s
-    Input Text  ${Pin/ZipCodeTB}  ${Pin/ZipCode}
+Fill the shipping address
+    wait until page contains element    ${SHIPPING_ADDRESS_HEADING}
+    input text                          ${HOUSE_NO_INPUT}           12345
+    input text                          ${CITY_INPUT}               Lucknow
+    input text                          ${PINCODE_INPUT}            201301
+    select from list by value           ${STATE_LIST}               IN-UP
+    select checkbox                     ${BILLING_ADDRESS_CHECKBOX}
+    click element                       ${REVIEW_ORDER_BUTTON}
 
-    sleep  1s
+select the payment option
+    wait until page contains element   ${REVIEW_ORDER_HEADING}
+    click element                      ${SELECT_PAYMENT_BUTTON}
 
+    wait until page contains element    ${SELECT_PAYMENT_HEADING}
+    select radio button                 ${PAYMENT_RADIO_BUTTON_GROUP}   Instamojo
+    click element                       ${PLACE_ORDER_BUTTON}
 
-
-
-
-Click on continue to Bag
-   Click Element  ${ContinueToBag}
-   sleep  3s
+switch to iframe and close it
+    wait until page contains element    xpath=//iframe
+    #select frame    xpath=//iframe
+    wait until page contains element    ${IFRAME_CLOSE_BUTTON}
+    click element                       ${IFRAME_CLOSE_BUTTON}

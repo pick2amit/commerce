@@ -29,3 +29,24 @@ Verify the navigation to prduct detail page
     StoreFront_HomePage.scroll to 1st product in list
     StoreFront_HomePage.open 1st produt in the list
     StoreFront_ProductPage.check for the BuyNow Btn
+
+add product to cart form the product page
+    StoreFront_ProductPage.check for the add to cart Btn
+    StoreFront_ProductPage.add product to cart
+
+open the cart page form header
+    StoreFront_TopNav.Open the cart page
+
+start the checkout
+    StoreFront_CartPage.page should load successfully
+    StoreFront_CartPage.proceed to checkout
+
+fill the delivery details and proceed
+    StoreFront_CheckoutPage.Fill the customer info
+    StoreFront_CheckoutPage.Fill the shipping address
+    StoreFront_CheckoutPage.select the payment option
+
+close the payment popup
+    StoreFront_CheckoutPage.switch to iframe and close it
+
+

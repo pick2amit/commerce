@@ -20,7 +20,6 @@ Home page title should match
     StoreFrontApp.Open the homepage
     StoreFrontApp.Verify the homepage title
 
-
 Home page banner should be present
     [Tags]    Smoke
     StoreFrontApp.Open the homepage
