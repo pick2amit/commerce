@@ -49,4 +49,21 @@ fill the delivery details and proceed
 close the payment popup
     StoreFront_CheckoutPage.switch to iframe and close it
 
+login on the store with valid credentials
+    [Arguments]    ${USER_EMAIL}    ${USER_PASSWORD}
+    StoreFront_TopNav.Open the login page
+    StoreFront_LoginPage.Enter user email       ${USER_EMAIL}
+    StoreFront_LoginPage.Enter password         ${USER_PASSWORD}
+    StoreFront_LoginPage.Click on login button
+    StoreFront_LoginPage.Verify valid login
+
+login on the store with Invalid credentials
+    [Arguments]    ${USER_EMAIL}    ${USER_PASSWORD}    ${ERROR_MESSAGE}    ${ERROR_TYPE}
+    Open the homepage
+    StoreFront_TopNav.Open the login page
+    StoreFront_LoginPage.Enter user email            ${USER_EMAIL}
+    StoreFront_LoginPage.Enter password              ${USER_PASSWORD}
+    StoreFront_LoginPage.Click on login button
+    StoreFront_LoginPage.Verify invalid login error  ${ERROR_TYPE}
+
 

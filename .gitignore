@@ -5,3 +5,4 @@ Results/
 .idea/workspace.xml
 !.keep
 *.pyc
+Tests/StoreFront/exp.robot
