@@ -2,7 +2,7 @@
 Documentation    Homepage smoke test
 Resource   ../../Resources/Common/CommonWeb.robot
 Resource   ../../Resources/StoreFront/StoreFrontApp.robot
-Library  DataDriver     ../../DataDriven/Store_login_data_v2.xlsx    sheet_name=Sheet1
+Library  DataDriver     ../../DataManager/Store_login_data_v2.xlsx    sheet_name=Sheet1
 
 Test Setup      Start web test
 Test Teardown   End web test

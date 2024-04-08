@@ -5,7 +5,7 @@ Library    Dialogs
 *** Variables ***
 ${CART_HEADING}              xpath://*[@id="cart-heading"]
 ${ORDER_SUMMARY_HEADING}     xpath://*[@id="root"]/div[3]/div/div[3]/div/div[2]/span
-${CHECKOUT_BTN}              xpath://*[@id="root"]/div[3]/div/div[3]/div/div[2]/div/button
+${CHECKOUT_BTN}              xpath://*[normalize-space()='Order Summary']/..//button[normalize-space()='Checkout']
 ${COUPON_CODE_INPUT}         xpath://*[@id="coupon-code-input"]
 ${APPLY_COUPON_BTN}          xpath://*[@id="apply-coupon"]
 ${REMOVE_PRODUCT_BTN}        xpath://*[@id="cart-item-delete-1"]

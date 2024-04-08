@@ -30,10 +30,6 @@ Verify the navigation to prduct detail page
     StoreFront_HomePage.open 1st produt in the list
     StoreFront_ProductPage.check for the BuyNow Btn
 
-add product to cart form the product page
-    StoreFront_ProductPage.check for the add to cart Btn
-    StoreFront_ProductPage.add product to cart
-
 open the cart page form header
     StoreFront_TopNav.Open the cart page
 
@@ -66,4 +62,16 @@ login on the store with Invalid credentials
     StoreFront_LoginPage.Click on login button
     StoreFront_LoginPage.Verify invalid login error  ${ERROR_TYPE}
 
+#Product page operations
+add product to cart form the product page
+    StoreFront_ProductPage.check for the add to cart Btn
+    StoreFront_ProductPage.add product to cart
+
+open the product page
+    [Arguments]                                           ${PAGE_URL}
+    StoreFront_ProductPage.go to specific product page    ${PAGE_URL}
+
+choose the file to upload
+    [Arguments]                                     ${FILE_LOCATION}
+    StoreFront_ProductPage.select file to upload    ${FILE_LOCATION}
 
